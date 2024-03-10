@@ -46,7 +46,7 @@ const Features = () => {
 const Card = ({ title, href }) => {
     return (
         <HStack
-            p={{ base: 3, sm: 4 }}
+            p={{ base: 3, sm: 5 }}
             bg={useColorModeValue('gray.100', 'gray.800')}
             spacing={5}
             rounded="lg"
