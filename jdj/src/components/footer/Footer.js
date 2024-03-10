@@ -20,11 +20,11 @@ const Footer = () => {
             fontSize="0.875rem"
         >
             <Flex maxW="100%" mx="auto" alignItems="center" justifyContent={"space-evenly"} px={10}>
-                <Text color="gray.600" fontSize="1rem" pl="0.5rem">
+                <Text color="gray.600" fontSize="0.9rem" pl="0.1rem" pr="0.5rem">
                     Copyright &copy; 2024 JDJ Private Limited. All rights reserved.
                 </Text>
 
-                <Text color="gray.600" fontSize="1rem" pl="0.5rem">
+                <Text color="gray.600" fontSize="0.9rem" pl="0.5rem" pr="0.1rem">
                     Designed with &hearts; by Adkood
                 </Text>
             </Flex>
