@@ -1,10 +1,17 @@
 'use client'
 
+import { colorCodeToggle } from '@/store';
 import Menu from './Menu';
 import { Flex, Image, Spacer, Link, useBreakpointValue, IconButton } from '@chakra-ui/react';
 import { WiDaySunny } from "react-icons/wi";
+import { IoMoonOutline } from "react-icons/io5";
+import { useSelector, useDispatch } from 'react-redux';
 
 const Navbar = () => {
+
+  const isLight = useSelector((state) => state.colorCode.isLight);
+  const dispatch = useDispatch();
+
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
@@ -23,9 +30,8 @@ const Navbar = () => {
         width="100%"
         paddingLeft={isMobile ? '1rem' : '2.5rem'}
         paddingRight={isMobile ? '1rem' : '2.5rem'}
-        borderRadius={isMobile ? '' : '0px 0px 10px 10px'}
         height="100%"
-        bgColor="gray.200"
+        bgColor={`${isLight ? 'gray.200' : '#656261'}`}
         border={"1px solid gray.200"}
       >
         <Flex align="center" mr={5} cursor={"pointer"}>
@@ -44,7 +50,7 @@ const Navbar = () => {
             <Link
               href="/products"
               fontSize="xl"
-              color="#36454F"
+              color={`${isLight ? '#36454F' : 'white'}`}
               mr={5}
               _hover={{ color: 'cornflowerblue' }}
             >
@@ -53,7 +59,7 @@ const Navbar = () => {
             <Link
               href="/applications"
               fontSize="xl"
-              color="#36454F"
+              color={`${isLight ? '#36454F' : 'white'}`}
               mr={5}
               _hover={{ color: 'cornflowerblue' }}
             >
@@ -62,7 +68,7 @@ const Navbar = () => {
             <Link
               href="/technology"
               fontSize="xl"
-              color="#36454F"
+              color={`${isLight ? '#36454F' : 'white'}`}
               mr={5}
               _hover={{ color: 'cornflowerblue' }}
             >
@@ -71,7 +77,7 @@ const Navbar = () => {
             <Link
               href="/contact"
               fontSize="xl"
-              color="#36454F"
+              color={`${isLight ? '#36454F' : 'white'}`}
               _hover={{ color: 'cornflowerblue' }}
             >
               Contact Us
@@ -82,13 +88,27 @@ const Navbar = () => {
         <Spacer />
 
         {isMobile && <Menu />}
-        <Flex
+
+        {isLight && <Flex
           as={IconButton}
           marginLeft={"1.5rem"}
-          icon={<WiDaySunny size={"1.7rem"} />}
+          icon={<WiDaySunny size={"1.8rem"} />}
           variant='outline'
+          borderStyle={"none"}
           boxSize="3rem"
-        />
+          onClick={() => { dispatch(colorCodeToggle()) }}
+        />}
+
+        {!isLight && <Flex
+          as={IconButton}
+          marginLeft={"1.5rem"}
+          icon={<IoMoonOutline color={"white"} size={"1.8rem"} />}
+          variant='outline'
+          borderStyle={"none"}
+          boxSize="3rem"
+          _hover={{ bgColor: "#656261" }}
+          onClick={() => { dispatch(colorCodeToggle()) }}
+        />}
 
       </Flex>
     </Flex>

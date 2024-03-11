@@ -1,5 +1,6 @@
 'use client'
 
+
 import * as React from 'react';
 import {
   chakra,
@@ -15,8 +16,11 @@ import {
 import { IoBulb } from "react-icons/io5";
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyles from '@/utils/Animate.module.css';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
+
+  const isLight = useSelector((state) => state.colorCode.isLight);
 
   const scrollTo = (to) => {
     const doc = document.getElementById(to);
@@ -28,10 +32,10 @@ const Home = () => {
   }
 
   return (
-    <Container maxW="100%" px={{ base: 6, md: 3 }} py={40} >
+    <Container maxW="100%" px={{ base: 6, md: 3 }} py={40} bgColor={`${isLight ? 'white' : '#464544'}`}>
       <Stack direction={{ base: 'column', md: 'row' }} justifyContent="center">
-        <Stack direction="column" spacing={6} justifyContent="center" maxW="480px" overflow={"hidden"}>
-          <chakra.h1 color={"#36454F"} fontSize="5xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
+        <Stack direction="column" spacing={6} justifyContent="center" maxW="480px" overflow={"hidden"} >
+          <chakra.h1 color={`${isLight ? '#36454F' : 'white'}`} fontSize="5xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
             PRECISION INNOVATION QUALITY <br />
             <chakra.span color="cornflowerblue">@ JDJ</chakra.span>
           </chakra.h1>
@@ -40,7 +44,7 @@ const Home = () => {
             textAlign="left"
             lineHeight="1.375"
             fontWeight="400"
-            color="gray.500"
+            color={`${isLight ? 'gray.500' : 'white'}`}
           >
             JD JAIN AND COMPANY PROUDLY PRESENTS ITS MANUFACTURING UNIT JDJ ALLOYS AS IT EMBARKS ON A GROUNDBREAKING VENTURE.
           </Text>

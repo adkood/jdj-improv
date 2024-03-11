@@ -1,3 +1,4 @@
+import StoreProvider from '@/store/storeProvider';
 import { Providers } from './providers'
 
 export const metadata = {
@@ -7,10 +8,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
-      <body>
-        <Providers>{children}</Providers>
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang='en'>
+        <body>
+          <Providers>{children}</Providers>
+        </body>
+      </html>
+    </StoreProvider>
   )
 }

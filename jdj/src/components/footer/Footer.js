@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import {
     Box,
@@ -6,25 +8,27 @@ import {
     Link,
     Text
 } from '@chakra-ui/react';
+import { useSelector } from 'react-redux';
 
-import { CiHeart } from "react-icons/ci";
 
 const Footer = () => {
+    const isLight = useSelector((state) => state.colorCode.isLight);
+
     return (
         <Box
             as="footer"
-            bg="gray.300"
+            bg={`${isLight ? 'gray.300' : '#656261'}`}
             borderTop="1px solid"
-            borderColor="gray.300"
+            borderColor={`${isLight ? 'gray.300' : '#656261'}`}
             py="2.5rem"
             fontSize="0.875rem"
         >
             <Flex maxW="100%" mx="auto" alignItems="center" justifyContent={"space-evenly"} px={10}>
-                <Text color="gray.600" fontSize="0.9rem" pl="0.1rem" pr="0.5rem">
+                <Text color={`${isLight ? 'gray.600' : 'white'}`} fontSize="0.9rem" pl="0.1rem" pr="0.5rem">
                     Copyright &copy; 2024 JDJ Private Limited. All rights reserved.
                 </Text>
 
-                <Text color="gray.600" fontSize="0.9rem" pl="0.5rem" pr="0.1rem">
+                <Text color={`${isLight ? 'gray.600' : 'white'}`} fontSize="0.9rem" pl="0.5rem" pr="0.1rem">
                     Designed with &hearts; by Adkood
                 </Text>
             </Flex>

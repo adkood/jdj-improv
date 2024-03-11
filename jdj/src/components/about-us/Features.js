@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import {
     Box,
@@ -11,6 +13,7 @@ import {
 } from '@chakra-ui/react';
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyles from '@/utils/Animate.module.css';
+import { useSelector } from 'react-redux';
 
 const articles = [
     {
@@ -33,6 +36,7 @@ const articles = [
 ];
 
 const Features = () => {
+
     return (
         <Container maxWidth="4xl" p={{ base: 2, sm: 10 }} overflow={"hidden"}>
             {articles.map((article, index) => (
@@ -88,6 +92,9 @@ const Card = ({ title, href }) => {
 };
 
 const LineWithDot = () => {
+
+    const isLight = useSelector((state) => state.colorCode.isLight);
+
     return (
         <Flex pos="relative" alignItems="center" mr="40px">
             <chakra.span
@@ -110,9 +117,9 @@ const LineWithDot = () => {
                     backgroundSize="cover"
                     backgroundRepeat="no-repeat"
                     backgroundPosition="center center"
-                    backgroundColor="rgb(255, 255, 255)"
+                    backgroundColor={`${isLight ? "rgb(255, 255, 255)" : "#464544"}`}
                     borderRadius="100px"
-                    border="3px solid cornflowerBlue"
+                    border={`3px solid ${isLight ? "cornflowerBlue" : "white"}`}
                     backgroundImage="none"
                     opacity={1}
                 ></Box>
