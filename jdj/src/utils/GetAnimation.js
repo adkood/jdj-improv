@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 const GetAnimation = ({ children, beforeView = '', afterView = '' }) => {
     const [ref, inView] = useInView({
         triggerOnce: true,
-        threshold: 0.8,
+        threshold: 0.5,
     });
 
     return (
