@@ -30,47 +30,49 @@ const Home = () => {
   return (
     <Container maxW="100%" px={{ base: 6, md: 3 }} py={40} >
       <Stack direction={{ base: 'column', md: 'row' }} justifyContent="center">
-        <Stack direction="column" spacing={6} justifyContent="center" maxW="480px">
-          {/* <GetAnimation beforeView={animateStyles.hiddenLeft} afterView={animateStyles.visibleLeft}> */}
-            <chakra.h1 color={"#36454F"} fontSize="5xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
-              PRECISION INNOVATION QUALITY <br />
-              <chakra.span color="cornflowerblue">@ JDJ</chakra.span>
-            </chakra.h1>
-          {/* </GetAnimation> */}
-          <Text
-            fontSize="1.5rem"
-            textAlign="left"
-            lineHeight="1.375"
-            fontWeight="400"
-            color="gray.500"
-          >
-            JD JAIN AND COMPANY PROUDLY PRESENTS ITS MANUFACTURING UNIT JDJ ALLOYS AS IT EMBARKS ON A GROUNDBREAKING VENTURE.
-          </Text>
-          <HStack
-            spacing={{ base: 0, sm: 2 }}
-            mb={{ base: '3rem !important', sm: 0 }}
-            flexWrap="wrap"
-          >
-            <chakra.button
-              w={{ base: '100%', sm: 'auto' }}
-              h={12}
-              px={6}
-              size="lg"
-              rounded="md"
-              mb={{ base: 2, sm: 0 }}
-              zIndex={4}
-              lineHeight={1}
-              bgColor={"cornflowerblue"}
-              _hover={{ opacity: 0.9 }}
-              display={"flex"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              onClick={() => { scrollTo("aboutUs") }}
+        <Stack direction="column" spacing={6} justifyContent="center" maxW="480px" overflow={"hidden"}>
+          <chakra.h1 color={"#36454F"} fontSize="5xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
+            PRECISION INNOVATION QUALITY <br />
+            <chakra.span color="cornflowerblue">@ JDJ</chakra.span>
+          </chakra.h1>
+          <GetAnimation beforeView={animateStyles.hiddenLeft} afterView={animateStyles.visibleLeft}>
+            <Text
+              fontSize="1.5rem"
+              textAlign="left"
+              lineHeight="1.375"
+              fontWeight="400"
+              color="gray.500"
             >
-              <chakra.span color={"white"} fontSize={"1.2rem"} padding={"10px"}> Learn more About Us. </chakra.span>
-              <IoBulb color="yellow" fontSize={"2rem"} />
-            </chakra.button>
-          </HStack>
+              JD JAIN AND COMPANY PROUDLY PRESENTS ITS MANUFACTURING UNIT JDJ ALLOYS AS IT EMBARKS ON A GROUNDBREAKING VENTURE.
+            </Text>
+          </GetAnimation>
+          <GetAnimation beforeView={animateStyles.hiddenLeft} afterView={animateStyles.visibleLeft}>
+            <HStack
+              spacing={{ base: 0, sm: 2 }}
+              mb={{ base: '3rem !important', sm: 0 }}
+              flexWrap="wrap"
+            >
+              <chakra.button
+                w={{ base: '100%', sm: 'auto' }}
+                h={12}
+                px={6}
+                size="lg"
+                rounded="md"
+                mb={{ base: 2, sm: 0 }}
+                zIndex={4}
+                lineHeight={1}
+                bgColor={"cornflowerblue"}
+                _hover={{ opacity: 0.9 }}
+                display={"flex"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                onClick={() => { scrollTo("aboutUs") }}
+              >
+                <chakra.span color={"white"} fontSize={"1.2rem"} padding={"10px"}> Learn more About Us. </chakra.span>
+                <IoBulb color="yellow" fontSize={"2rem"} />
+              </chakra.button>
+            </HStack>
+          </GetAnimation>
         </Stack>
         <Box ml={{ base: 0, md: 5 }} pos="relative">
           <DottedBox />
