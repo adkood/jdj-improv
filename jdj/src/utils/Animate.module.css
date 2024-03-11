@@ -1,3 +1,4 @@
+/* left slide-in */
 .visibleLeft {
     opacity: 1;
     transform: translateX(0);
@@ -10,6 +11,7 @@
     transition: opacity 1s ease, transform 1s ease;
 }
 
+/* right slide-in */
 .visibleRight {
     opacity: 1;
     transform: translateX(0);

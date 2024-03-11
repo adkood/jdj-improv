@@ -13,15 +13,10 @@ import {
   Box,
 } from '@chakra-ui/react';
 import { IoBulb } from "react-icons/io5";
-import { useInView } from 'react-intersection-observer';
-import styles from './HomeAnimate.module.css';
+import GetAnimation from '@/utils/GetAnimation';
+import animateStyles from '@/utils/Animate.module.css';
 
 const Home = () => {
-
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
 
   const scrollTo = (to) => {
     const doc = document.getElementById(to);
@@ -33,13 +28,15 @@ const Home = () => {
   }
 
   return (
-    <Container ref={ref} maxW="100%" px={{ base: 6, md: 3 }} py={40} >
+    <Container maxW="100%" px={{ base: 6, md: 3 }} py={40} >
       <Stack direction={{ base: 'column', md: 'row' }} justifyContent="center">
-        <Stack direction="column" spacing={6} justifyContent="center" maxW="480px" className={inView ? styles.visibleLeft : styles.hiddenLeft}>
-          <chakra.h1 color={"#36454F"} fontSize="5xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
-            PRECISION INNOVATION QUALITY <br />
-            <chakra.span color="cornflowerblue">@ JDJ</chakra.span>
-          </chakra.h1>
+        <Stack direction="column" spacing={6} justifyContent="center" maxW="480px">
+          <GetAnimation beforeView={animateStyles.hiddenLeft} afterView={animateStyles.visibleLeft}>
+            <chakra.h1 color={"#36454F"} fontSize="5xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
+              PRECISION INNOVATION QUALITY <br />
+              <chakra.span color="cornflowerblue">@ JDJ</chakra.span>
+            </chakra.h1>
+          </GetAnimation>
           <Text
             fontSize="1.5rem"
             textAlign="left"
@@ -75,7 +72,7 @@ const Home = () => {
             </chakra.button>
           </HStack>
         </Stack>
-        <Box ml={{ base: 0, md: 5 }} pos="relative" className={inView ? styles.visibleRight : styles.hiddenRight}>
+        <Box ml={{ base: 0, md: 5 }} pos="relative">
           <DottedBox />
           <Image
             w="100%"

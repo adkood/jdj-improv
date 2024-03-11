@@ -9,6 +9,8 @@ import {
     useColorModeValue,
     Link
 } from '@chakra-ui/react';
+import GetAnimation from '@/utils/GetAnimation';
+import animateStyles from '@/utils/Animate.module.css';
 
 const articles = [
     {
@@ -34,10 +36,12 @@ const Features = () => {
     return (
         <Container maxWidth="4xl" p={{ base: 2, sm: 10 }}>
             {articles.map((article, index) => (
-                <Flex key={index} mb="10px">
-                    <LineWithDot />
-                    <Card {...article} />
-                </Flex>
+                <GetAnimation beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
+                    <Flex key={index} mb="10px">
+                        <LineWithDot />
+                        <Card {...article} />
+                    </Flex>
+                </GetAnimation>
             ))}
         </Container>
     );
