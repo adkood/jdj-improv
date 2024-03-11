@@ -31,12 +31,12 @@ const Home = () => {
     <Container maxW="100%" px={{ base: 6, md: 3 }} py={40} >
       <Stack direction={{ base: 'column', md: 'row' }} justifyContent="center">
         <Stack direction="column" spacing={6} justifyContent="center" maxW="480px">
-          <GetAnimation beforeView={animateStyles.hiddenLeft} afterView={animateStyles.visibleLeft}>
+          {/* <GetAnimation beforeView={animateStyles.hiddenLeft} afterView={animateStyles.visibleLeft}> */}
             <chakra.h1 color={"#36454F"} fontSize="5xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
               PRECISION INNOVATION QUALITY <br />
               <chakra.span color="cornflowerblue">@ JDJ</chakra.span>
             </chakra.h1>
-          </GetAnimation>
+          {/* </GetAnimation> */}
           <Text
             fontSize="1.5rem"
             textAlign="left"

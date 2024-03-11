@@ -36,12 +36,12 @@ const Features = () => {
     return (
         <Container maxWidth="4xl" p={{ base: 2, sm: 10 }}>
             {articles.map((article, index) => (
-                <GetAnimation key={index} beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
-                    <Flex mb="10px">
+                // <GetAnimation  beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
+                    <Flex key={index} mb="10px">
                         <LineWithDot />
                         <Card {...article} />
                     </Flex>
-                </GetAnimation>
+                // </GetAnimation>
             ))}
         </Container>
     );
