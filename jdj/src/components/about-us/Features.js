@@ -34,14 +34,14 @@ const articles = [
 
 const Features = () => {
     return (
-        <Container maxWidth="4xl" p={{ base: 2, sm: 10 }}>
+        <Container maxWidth="4xl" p={{ base: 2, sm: 10 }} overflow={"hidden"}>
             {articles.map((article, index) => (
-                // <GetAnimation  beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
-                    <Flex key={index} mb="10px">
+                <GetAnimation key={index} beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
+                    <Flex mb="10px">
                         <LineWithDot />
                         <Card {...article} />
                     </Flex>
-                // </GetAnimation>
+                </GetAnimation>
             ))}
         </Container>
     );
