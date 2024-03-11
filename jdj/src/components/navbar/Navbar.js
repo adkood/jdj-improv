@@ -36,11 +36,17 @@ const Navbar = () => {
       >
         <Flex align="center" mr={5} cursor={"pointer"}>
           <Link href={"/"} p={2}>
-            <Image
+            {isLight ? <Image
               src="https://i.ibb.co/FV4d8SY/logo.png"
               alt="Your Logo"
               boxSize="5rem"
-            />
+            /> : <Image
+              src="https://i.ibb.co/FV4d8SY/logo.png"
+              alt="Your Logo"
+              boxSize="5rem"
+              filter="invert(100%)"
+              transition="filter 0.2s ease-in-out"
+            />}
           </Link>
         </Flex>
         <Spacer />
