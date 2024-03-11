@@ -45,7 +45,6 @@ const Navbar = () => {
               alt="Your Logo"
               boxSize="5rem"
               filter="invert(100%)"
-              transition="filter 0.2s ease-in-out"
             />}
           </Link>
         </Flex>
