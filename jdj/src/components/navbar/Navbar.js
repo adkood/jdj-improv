@@ -35,7 +35,7 @@ const Navbar = () => {
         border={"1px solid gray.200"}
       >
         <Flex align="center" mr={5} cursor={"pointer"}>
-          <Link href={"/"}>
+          <Link href={"/"} p={2}>
             <Image
               src="https://i.ibb.co/FV4d8SY/logo.png"
               alt="Your Logo"
