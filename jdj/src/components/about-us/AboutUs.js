@@ -10,7 +10,7 @@ const AboutUs = () => {
     const isLight = useSelector((state) => state.colorCode.isLight);
 
     return (
-        <Stack id="aboutUs" minH="100vh" direction={{ base: 'column', md: 'row' }} p={4} bgColor={`${isLight ? 'white' : '#464544'}`}>
+        <Stack id="aboutUs" minH="100vh" direction={{ base: 'column', md: 'row' }} p={4} bgColor={`${isLight ? '' : '#464544'}`}>
             <Flex flex={1}>
                 <Image rounded="md" alt="Cover image" objectFit="cover" src="./aboutUs.jpeg" />
             </Flex>
