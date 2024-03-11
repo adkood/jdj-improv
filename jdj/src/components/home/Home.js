@@ -35,17 +35,15 @@ const Home = () => {
             PRECISION INNOVATION QUALITY <br />
             <chakra.span color="cornflowerblue">@ JDJ</chakra.span>
           </chakra.h1>
-          <GetAnimation beforeView={animateStyles.hiddenLeft} afterView={animateStyles.visibleLeft}>
-            <Text
-              fontSize="1.5rem"
-              textAlign="left"
-              lineHeight="1.375"
-              fontWeight="400"
-              color="gray.500"
-            >
-              JD JAIN AND COMPANY PROUDLY PRESENTS ITS MANUFACTURING UNIT JDJ ALLOYS AS IT EMBARKS ON A GROUNDBREAKING VENTURE.
-            </Text>
-          </GetAnimation>
+          <Text
+            fontSize="1.5rem"
+            textAlign="left"
+            lineHeight="1.375"
+            fontWeight="400"
+            color="gray.500"
+          >
+            JD JAIN AND COMPANY PROUDLY PRESENTS ITS MANUFACTURING UNIT JDJ ALLOYS AS IT EMBARKS ON A GROUNDBREAKING VENTURE.
+          </Text>
           <GetAnimation beforeView={animateStyles.hiddenLeft} afterView={animateStyles.visibleLeft}>
             <HStack
               spacing={{ base: 0, sm: 2 }}
