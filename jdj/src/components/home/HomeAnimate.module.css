@@ -1,0 +1,23 @@
+.visibleLeft {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.hiddenLeft {
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.visibleRight {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.hiddenRight {
+    opacity: 0;
+    transform: translateX(150px);
+    transition: opacity 1s ease, transform 1s ease;
+}
