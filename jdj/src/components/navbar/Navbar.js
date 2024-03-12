@@ -2,7 +2,9 @@
 
 import { colorCodeToggle } from '@/store';
 import Menu from './Menu';
-import { Flex, Image, Spacer, Link, useBreakpointValue, IconButton } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
+import { Flex, Image, Spacer, useBreakpointValue, IconButton } from '@chakra-ui/react';
+import Link from 'next/link';
 import { WiDaySunny } from "react-icons/wi";
 import { IoMoonOutline } from "react-icons/io5";
 import { useSelector, useDispatch } from 'react-redux';
@@ -35,57 +37,63 @@ const Navbar = () => {
         border={"1px solid gray.200"}
       >
         <Flex align="center" mr={5} cursor={"pointer"}>
-          <Link href={"/"} p={2}>
-            {isLight ? <Image
-              src="https://i.ibb.co/FV4d8SY/logo.png"
-              alt="Your Logo"
-              boxSize="5rem"
-            /> : <Image
-              src="https://i.ibb.co/FV4d8SY/logo.png"
-              alt="Your Logo"
-              boxSize="5rem"
-              filter="invert(100%)"
-            />}
+          <Link href={"/"}>
+            <Text p={2}>
+              {isLight ? <Image
+                src="https://i.ibb.co/FV4d8SY/logo.png"
+                alt="Your Logo"
+                boxSize="5rem"
+              /> : <Image
+                src="https://i.ibb.co/FV4d8SY/logo.png"
+                alt="Your Logo"
+                boxSize="5rem"
+                filter="invert(100%)"
+              />}
+            </Text>
           </Link>
         </Flex>
         <Spacer />
 
         {!isMobile && (
           <Flex>
-            <Link
-              href="/products"
-              fontSize="xl"
-              color={`${isLight ? '#36454F' : 'white'}`}
-              mr={5}
-              _hover={{ color: 'cornflowerblue' }}
-            >
-              Products
+            <Link href="/products">
+              <Text
+                fontSize="xl"
+                color={`${isLight ? '#36454F' : 'white'}`}
+                mr={5}
+                _hover={{ color: 'cornflowerblue' }}
+              >
+                Products
+              </Text>
             </Link>
-            <Link
-              href="/applications"
-              fontSize="xl"
-              color={`${isLight ? '#36454F' : 'white'}`}
-              mr={5}
-              _hover={{ color: 'cornflowerblue' }}
-            >
-              Applications
+            <Link href="/applications">
+              <Text
+                fontSize="xl"
+                color={`${isLight ? '#36454F' : 'white'}`}
+                mr={5}
+                _hover={{ color: 'cornflowerblue' }}
+              >
+                Applications
+              </Text>
             </Link>
-            <Link
-              href="/technology"
-              fontSize="xl"
-              color={`${isLight ? '#36454F' : 'white'}`}
-              mr={5}
-              _hover={{ color: 'cornflowerblue' }}
-            >
-              Technology
+            <Link href="/technology">
+              <Text
+                fontSize="xl"
+                color={`${isLight ? '#36454F' : 'white'}`}
+                mr={5}
+                _hover={{ color: 'cornflowerblue' }}
+              >
+                Technology
+              </Text>
             </Link>
-            <Link
-              href="/contact"
-              fontSize="xl"
-              color={`${isLight ? '#36454F' : 'white'}`}
-              _hover={{ color: 'cornflowerblue' }}
-            >
-              Contact Us
+            <Link href="/contact">
+              <Text
+                fontSize="xl"
+                color={`${isLight ? '#36454F' : 'white'}`}
+                _hover={{ color: 'cornflowerblue' }}
+              >
+                Contact Us
+              </Text>
             </Link>
           </Flex>
         )}

@@ -9,8 +9,9 @@ import {
     VStack,
     Flex,
     useColorModeValue,
-    Link
+    Text,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyles from '@/utils/Animate.module.css';
 import { useSelector } from 'react-redux';
@@ -74,16 +75,17 @@ const Card = ({ title, href }) => {
         >
             <Box>
                 <VStack spacing={0} mb={3} textAlign="left">
-                    <Link
-                        _hover={{ color: 'cornflowerBlue' }}
-                        fontSize="2xl"
-                        lineHeight={1.2}
-                        fontWeight="bold"
-                        w="100%"
-                        color={"#36454F"}
-                        href={href}
-                    >
-                        {title}
+                    <Link href={href}>
+                        <Text
+                            _hover={{ color: 'cornflowerBlue' }}
+                            fontSize="2xl"
+                            lineHeight={1.2}
+                            fontWeight="bold"
+                            w="100%"
+                            color={"#36454F"}
+                        >
+                            {title}
+                        </Text>
                     </Link>
                 </VStack>
             </Box>
