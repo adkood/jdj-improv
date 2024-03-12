@@ -8,13 +8,16 @@ const ProductHome = () => {
   const bgColor = useColorModeValue('white', 'gray.800');
   const textColor = isLight ? '#36454F' : 'white';
   const secondaryColor = isLight ? 'gray.500' : 'white';
+  const boxShadow = isLight
+    ? '0 4px 6px rgba(160, 174, 192, 0.6)'
+    : '2px 4px 6px rgba(9, 17, 28, 0.9)';
 
   return (
     <Box pb={8}>
       <Stack pos="relative" bgColor={`cornflowerBlue`} height="250px" w="100%"></Stack>
       <Box maxW="3xl" p={4} isolation="isolate" zIndex={3} mt="-10rem" marginInline="auto">
         <Box
-          boxShadow={isLight ? useColorModeValue('0 4px 6px rgba(160, 174, 192, 0.6)', '0 4px 6px rgba(9, 17, 28, 0.9)') : ''}
+          boxShadow={boxShadow}
           bg={bgColor}
           p={{ base: 4, sm: 8 }}
           overflow="hidden"
