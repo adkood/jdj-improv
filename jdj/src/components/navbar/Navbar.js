@@ -31,7 +31,7 @@ const Navbar = () => {
         paddingLeft={isMobile ? '1rem' : '2.5rem'}
         paddingRight={isMobile ? '1rem' : '2.5rem'}
         height="100%"
-        bgColor={`${isLight ? 'gray.200' : '#656261'}`}
+        bgColor={`${isLight ? 'gray.100' : '#656261'}`}
         border={"1px solid gray.200"}
       >
         <Flex align="center" mr={5} cursor={"pointer"}>
