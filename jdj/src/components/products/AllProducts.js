@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 
 import React from 'react';
 import { Box, Badge, SimpleGrid, Container, Image, Link, Text } from '@chakra-ui/react';

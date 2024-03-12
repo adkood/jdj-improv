@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import { chakra, Link, Stack, Box, Button, useColorModeValue } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
