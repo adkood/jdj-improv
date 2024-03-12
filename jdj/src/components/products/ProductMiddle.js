@@ -15,6 +15,8 @@ import {
 import { motion } from 'framer-motion';
 import { AiOutlineEye } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
+import GetAnimation from '@/utils/GetAnimation';
+import animateStyles from '@/utils/Animate.module.css';
 
 const ProductMiddle = () => {
     const isLight = useSelector((state) => state.colorCode.isLight);
@@ -44,8 +46,13 @@ const ProductMiddle = () => {
                     direction={{ base: 'column', sm: 'row' }}
                     alignItems="center"
                 >
-                    <Card detail="Technology Involved." href="/technology" isLight={isLight}/>
-                    <Card detail="Product Applications." href="/applications" isLight={isLight}/>
+                    <GetAnimation beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
+                        <Card detail="Technology Involved." href="/technology" isLight={isLight} />
+                    </GetAnimation>
+
+                    <GetAnimation beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
+                        <Card detail="Product Applications." href="/applications" isLight={isLight} />
+                    </GetAnimation>
                 </Stack>
             </Stack>
         </Container>

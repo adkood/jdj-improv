@@ -3,6 +3,9 @@
 import React from 'react';
 import { Box, Badge, SimpleGrid, Container, Image, Link, Text } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
+import GetAnimation from '@/utils/GetAnimation';
+import animateStyles from '@/utils/Animate.module.css';
+
 
 const dataList = [
   {
@@ -37,52 +40,54 @@ const AllComponents = () => {
       <SimpleGrid columns={[1, 2, 3]} spacing="20px">
         {dataList.map((blog) => {
           return (
-            <Box position="relative" key={blog.id}>
-              <Box fontSize="sm" position="absolute" right="5px" margin="5px" zIndex="1">
-                <Badge rounded="full" p="2px 8px" colorScheme="blue">
-                  Available
-                </Badge>
-              </Box>
-              <Box
-                borderWidth="1px"
-                shadow="md"
-                rounded="lg"
-                overflow="hidden"
-                position="relative"
-              >
-                <Image src={blog.image} alt="Blog image" />
-                <Box p={{ base: 4, lg: 6 }} bgColor={"whiteSmoke"}>
-                  <Box d="flex" alignItems="baseline">
-                    <Box
+            <GetAnimation beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
+              <Box position="relative" key={blog.id}>
+                <Box fontSize="sm" position="absolute" right="5px" margin="5px" zIndex="1">
+                  <Badge rounded="full" p="2px 8px" colorScheme="blue">
+                    Available
+                  </Badge>
+                </Box>
+                <Box
+                  borderWidth="1px"
+                  shadow="md"
+                  rounded="lg"
+                  overflow="hidden"
+                  position="relative"
+                >
+                  <Image src={blog.image} alt="Blog image" />
+                  <Box p={{ base: 4, lg: 6 }} bgColor={"whiteSmoke"}>
+                    <Box d="flex" alignItems="baseline">
+                      <Box
+                        fontWeight="semibold"
+                        as="h2"
+                        letterSpacing="wide"
+                        textTransform="uppercase"
+                        ml="2"
+                      >
+                        {blog.title}
+                      </Box>
+                    </Box>
+                    <Box>
+                      <Box color="gray.600" fontSize="sm">
+                        <Badge rounded="full" px="2" colorScheme="teal">
+                          {blog.authorName}
+                        </Badge>
+                      </Box>
+                    </Box>
+                    <Text
+                      mt="1"
                       fontWeight="semibold"
-                      as="h2"
-                      letterSpacing="wide"
-                      textTransform="uppercase"
-                      ml="2"
+                      noOfLines={3}
+                      lineHeight="tight"
+                      color="gray.600"
+                      fontSize="sm"
                     >
-                      {blog.title}
-                    </Box>
+                      {blog.content}
+                    </Text>
                   </Box>
-                  <Box>
-                    <Box color="gray.600" fontSize="sm">
-                      <Badge rounded="full" px="2" colorScheme="teal">
-                        {blog.authorName}
-                      </Badge>
-                    </Box>
-                  </Box>
-                  <Text
-                    mt="1"
-                    fontWeight="semibold"
-                    noOfLines={3}
-                    lineHeight="tight"
-                    color="gray.600"
-                    fontSize="sm"
-                  >
-                    {blog.content}
-                  </Text>
                 </Box>
               </Box>
-            </Box>
+            </GetAnimation>
           );
         })}
       </SimpleGrid>

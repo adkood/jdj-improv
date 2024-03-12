@@ -1,6 +1,5 @@
 'use client'
 
-
 import * as React from 'react';
 import {
   chakra,
@@ -39,15 +38,17 @@ const Home = () => {
             PRECISION INNOVATION QUALITY <br />
             <chakra.span color="cornflowerblue">@ JDJ</chakra.span>
           </chakra.h1>
-          <Text
-            fontSize="1.5rem"
-            textAlign="left"
-            lineHeight="1.375"
-            fontWeight="400"
-            color={`${isLight ? 'gray.500' : 'white'}`}
-          >
-            JD JAIN AND COMPANY PROUDLY PRESENTS ITS MANUFACTURING UNIT JDJ ALLOYS AS IT EMBARKS ON A GROUNDBREAKING VENTURE.
-          </Text>
+          <GetAnimation beforeView={animateStyles.hiddenLeft} afterView={animateStyles.visibleLeft}>
+            <Text
+              fontSize="1.5rem"
+              textAlign="left"
+              lineHeight="1.375"
+              fontWeight="400"
+              color={`${isLight ? 'gray.500' : 'white'}`}
+            >
+              JD JAIN AND COMPANY PROUDLY PRESENTS ITS MANUFACTURING UNIT JDJ ALLOYS AS IT EMBARKS ON A GROUNDBREAKING VENTURE.
+            </Text>
+          </GetAnimation>
           <GetAnimation beforeView={animateStyles.hiddenLeft} afterView={animateStyles.visibleLeft}>
             <HStack
               spacing={{ base: 0, sm: 2 }}
