@@ -45,6 +45,7 @@ const ProductMiddle = () => {
                     spacing={{ base: 5, sm: 2 }}
                     direction={{ base: 'column', sm: 'row' }}
                     alignItems="center"
+                    overflow={"hidden"}
                 >
                     <GetAnimation beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
                         <Card detail="Technology Involved." href="/technology" isLight={isLight} />

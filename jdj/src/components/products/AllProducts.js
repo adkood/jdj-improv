@@ -37,7 +37,7 @@ const AllComponents = () => {
 
   return (
     <Container maxWidth="1200px" mx="auto" my="auto" p={{ base: 5, md: 10 }} bgColor={`${isLight ? '' : '#464544'}`}>
-      <SimpleGrid columns={[1, 2, 3]} spacing="20px">
+      <SimpleGrid columns={[1, 2, 3]} spacing="20px" overflow={"hidden"}>
         {dataList.map((blog) => {
           return (
             <GetAnimation key={blog.id} beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
