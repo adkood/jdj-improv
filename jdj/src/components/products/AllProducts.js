@@ -40,8 +40,8 @@ const AllComponents = () => {
       <SimpleGrid columns={[1, 2, 3]} spacing="20px">
         {dataList.map((blog) => {
           return (
-            <GetAnimation beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
-              <Box position="relative" key={blog.id}>
+            <GetAnimation key={blog.id} beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
+              <Box position="relative">
                 <Box fontSize="sm" position="absolute" right="5px" margin="5px" zIndex="1">
                   <Badge rounded="full" p="2px 8px" colorScheme="blue">
                     Available
