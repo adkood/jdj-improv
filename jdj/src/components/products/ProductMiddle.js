@@ -17,7 +17,6 @@ import { AiOutlineEye } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 
 const ProductMiddle = () => {
-
     const isLight = useSelector((state) => state.colorCode.isLight);
 
     return (
@@ -45,27 +44,21 @@ const ProductMiddle = () => {
                     direction={{ base: 'column', sm: 'row' }}
                     alignItems="center"
                 >
-                    <Card detail="Technology Involved." href="/technology"/>
-                    <Card detail="Product Applications." href="/applications"/>
+                    <Card detail="Technology Involved." href="/technology" isLight={isLight}/>
+                    <Card detail="Product Applications." href="/applications" isLight={isLight}/>
                 </Stack>
             </Stack>
         </Container>
     );
 };
 
-const Card = ({ detail, href}) => {
-
-    const isLight = useSelector((state) => state.colorCode.isLight);
-
+const Card = ({ detail, href, isLight }) => {
     return (
         <motion.div whileHover={{ translateY: -5 }}>
             <Stack
                 direction="column"
                 rounded="md"
-                boxShadow={`${isLight ? useColorModeValue(
-                    '0 4px 6px rgba(160, 174, 192, 0.6)',
-                    '2px 4px 6px rgba(9, 17, 28, 0.9)'
-                ) : ""}`}
+                boxShadow={`${isLight ? '0 4px 6px rgba(160, 174, 192, 0.6)' : '2px 4px 6px rgba(9, 17, 28, 0.9)'}`}
                 w="100%"
                 textAlign="left"
                 align="start"
@@ -112,6 +105,5 @@ const Card = ({ detail, href}) => {
         </motion.div>
     );
 };
-
 
 export default ProductMiddle;
