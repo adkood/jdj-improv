@@ -3,6 +3,7 @@
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyle from '@/utils/Animate.module.css';
 import { chakra, Container, Stack, Text, useColorModeValue, Image, Skeleton, Box, Link } from '@chakra-ui/react';
+import { useSelector } from 'react-redux';
 
 const tech_list = [{
   id: '1', image: 'https://i.ibb.co/89ym8sG/casting.jpg', name: "CASTING", short: 'Casting is a manufacturing process in which molten material, like metal, is poured into a mold and allowed to harden.', advantage: ["Continuous production of soft annealed copper.",
@@ -45,12 +46,15 @@ const TechnologyAll = () => {
 }
 
 export const TechnologySolo = ({ e }) => {
+
+  const isLight = useSelector((state) => state.colorCode.isLight);
+
   return (
     <GetAnimation beforeView={animateStyle.hiddenLeft} afterView={animateStyle.VisibleLeft}>
       <Container maxW="6xl" px={{ base: 6, md: 3 }} py={14}>
         <Stack direction={{ base: 'column', md: 'row' }} justifyContent="center">
           <Box mr={{ base: 0, md: 5 }} pos="relative">
-            <DottedBox />
+            <DottedBox isLight={isLight} />
             <Image
               boxShadow="lg"
               w="100%"
@@ -68,12 +72,12 @@ export const TechnologySolo = ({ e }) => {
               {e.name}
             </chakra.h1>
             <Box>
-              <Content fontSize="2xl">
+              <Content fontSize="2xl" color={`${isLight ? '' : 'white'}`}>
                 {e.short}
               </Content>
             </Box>
             <Link href="#" fontSize="sm" color="blue.400">
-              More →
+              MORE →
             </Link>
           </Stack>
         </Stack>
@@ -98,7 +102,7 @@ const Content = ({ children, ...props }) => {
   );
 };
 
-function DottedBox() {
+function DottedBox(isLight) {
   return (
     <Box position="absolute" left="-45px" top="-60px" height="full" maxW="700px" zIndex={-1}>
       <svg
