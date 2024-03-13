@@ -18,7 +18,7 @@ import { useSelector } from 'react-redux';
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyles from '@/utils/Animate.module.css';
 
-const ProductMiddle = () => {
+const ProductBottom = () => {
     const isLight = useSelector((state) => state.colorCode.isLight);
 
     return (
@@ -114,4 +114,4 @@ const Card = ({ detail, href, isLight }) => {
     );
 };
 
-export default ProductMiddle;
+export default ProductBottom;

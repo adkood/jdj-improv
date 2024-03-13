@@ -1,8 +1,10 @@
+'use client'
+
 import { chakra, Link, Stack, Box, Button, useColorModeValue } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
-import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import { GrTechnology } from "react-icons/gr";
 
-const ProductHome = () => {
+const TechnologyHome = () => {
   const isLight = useSelector((state) => state.colorCode.isLight);
   const bgColor = useColorModeValue('white', 'gray.800');
   const textColor = isLight ? '#36454F' : 'white';
@@ -25,16 +27,16 @@ const ProductHome = () => {
         >
           <Stack pos="relative" zIndex={1} direction="column" spacing={5} textAlign="left">
             <Stack direction="row" alignItems="center">
-              <MdOutlineProductionQuantityLimits fontSize={"3rem"} color={"cornflowerBlue"} />
+              <GrTechnology fontSize={"3rem"} color={"cornflowerBlue"} />
               <chakra.span fontSize="4xl" lineHeight={1.2} color={textColor} fontWeight="bold">
-                OUR PRODUCTS
+                TECHNOLOGY USED
               </chakra.span>
             </Stack>
             <chakra.h1 color={secondaryColor} fontSize="xl" maxW="600px" lineHeight={1.2}>
               Unleashing Unprecedented Excellence: Pioneering the Future of Copper Manufacturing with Innovative Solutions, Superior Quality, and Sustainable Practices.
             </chakra.h1>
             <chakra.h1 color="cornflowerblue" fontSize="xl" maxW="600px" lineHeight={1.2}>
-              Explore Our Diverse Range of Products: Copper Wire, Copper Rod, and Copper Strip.
+              Technological Innovations Fueling Our Products
             </chakra.h1>
           </Stack>
         </Box>
@@ -43,4 +45,4 @@ const ProductHome = () => {
   );
 };
 
-export default ProductHome;
+export default TechnologyHome;
