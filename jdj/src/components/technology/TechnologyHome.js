@@ -35,7 +35,7 @@ const TechnologyHome = () => {
             <chakra.h1 color={secondaryColor} fontSize="xl" maxW="600px" lineHeight={1.2}>
               Unleashing Unprecedented Excellence: Pioneering the Future of Copper Manufacturing with Innovative Solutions, Superior Quality, and Sustainable Practices.
             </chakra.h1>
-            <chakra.h1 color="cornflowerblue" fontSize="xl" maxW="600px" lineHeight={1.2}>
+            <chakra.h1 color={secondaryColor} fontSize="xl" maxW="600px" lineHeight={1.2}>
               Technological Innovations Fueling Our Products
             </chakra.h1>
           </Stack>
