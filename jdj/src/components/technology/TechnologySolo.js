@@ -1,132 +1,73 @@
-'use client'
+'use client';
 
-import GetAnimation from '@/utils/GetAnimation';
-import animateStyle from '@/utils/Animate.module.css';
-import { chakra, Container, Stack, Text, useColorModeValue, Image, Skeleton, Box, Link } from '@chakra-ui/react';
-import { useSelector } from 'react-redux';
+import { Fragment } from 'react';
+import { Container, Text, Stack, Avatar, Icon, Image, Box } from '@chakra-ui/react';
+import { ImQuotesLeft } from 'react-icons/im';
 
-const tech_list = [{
-  id: '1', image: 'https://i.ibb.co/89ym8sG/casting.jpg', name: "CASTING", short: 'Casting is a manufacturing process in which molten material, like metal, is poured into a mold and allowed to harden.', advantage: ["Continuous production of soft annealed copper.",
-    "Defect free production in continuous length",
-    "High electrical conductivity",
-    "Production of complex cross sectional geometry"], prod_avail: ["Bare copper strip", "Rectangular wire", "Copper profile"], application: ["Earthing Conductor",
-      "Lightening protection",
-      "Transformer winding wire",
-      "Profiles for connectors"]
-},
-{
-  id: '2', image: 'https://i.ibb.co/fDGtqnb/extrusion.png', name: "EXTRUSION", short: 'Extrusion is a compressive forming manufacturing process that creates lengths of shaped cross-sections from metal billets.', advantage: ["Continuous production of soft annealed copper.",
-    "Defect free production in continuous length",
-    "High electrical conductivity",
-    "Production of complex cross sectional geometry"], prod_avail: ["Bare copper strip", "Rectangular wire", "Copper profile"], application: ["Earthing Conductor",
-      "Lightening protection",
-      "Transformer winding wire",
-      "Profiles for connectors"]
-}, {
-  id: '3', image: 'https://i.ibb.co/8xqq4Ld/drawing2.png', name: "DRAWING", short: 'This process allows artists to create intricate and detailed prints with fine lines and textures.', advantage: ["Suitable for fine wire drawing",
-    "High conductivity helps less metal usage",
-    "Longer packing length suitable for welding",
-    "Easy to stringing up in wire drawing machine"], prod_avail: ["Rod breakdown wire 1.8 mm to 3.5 mm",
-      "Intermediate wire 1 mm to 1.6 mm",
-      "Fine wire 0.3 mm to 0.8 mm"], application: ["Flexible conductor for building wire and welding cable",
-        "HV, MV, LV Energy transmission with low heat development",
-        "High frequency communication cable application"]
-}];
+const testimonials = [
+  {
+    name: 'Ben Parker',
+    position: 'CEO',
+    company: 'Foodtesla',
+    image:
+      'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb',
+    content:
+      'Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper'
+  }
+];
 
-const TechnologyAll = () => {
+const TechnologySolo = () => {
   return (
-    <Box overflow={"hidden"}>
-      {tech_list.map((ele) => {
-        return (
-          <TechnologySolo key={ele.id} e={ele} />
-        )
-      })}
-    </Box>
-  )
-}
-
-export const TechnologySolo = ({ e }) => {
-
-  const isLight = useSelector((state) => state.colorCode.isLight);
-
-  return (
-    <GetAnimation beforeView={animateStyle.hiddenLeft} afterView={animateStyle.VisibleLeft}>
-      <Container maxW="6xl" px={{ base: 6, md: 3 }} py={14}>
-        <Stack direction={{ base: 'column', md: 'row' }} justifyContent="center">
-          <Box mr={{ base: 0, md: 5 }} pos="relative">
-            <DottedBox isLight={isLight} />
-            <Image
-              boxShadow="lg"
-              w="100%"
-              h="100%"
-              minW={{ base: 'auto', md: '30rem' }}
-              maxH="20rem"
-              objectFit="cover"
-              src={e.image}
-              rounded="md"
-              fallback={<Skeleton />}
-            />
-          </Box>
-          <Stack direction="column" spacing={6} justifyContent="center">
-            <chakra.h1 fontSize="4xl" color={"cornflowerBlue"} lineHeight={1} fontWeight="bold" textAlign="left">
-              {e.name}
-            </chakra.h1>
-            <Box>
-              <Content fontSize="2xl" color={`${isLight ? '' : 'white'}`}>
-                {e.short}
-              </Content>
-            </Box>
-            <Link href="#" fontSize="sm" color="blue.400">
-              MORE →
-            </Link>
-          </Stack>
-        </Stack>
-      </Container>
-    </GetAnimation>
-
-  );
-};
-
-const Content = ({ children, ...props }) => {
-  return (
-    <Text
-      fontSize="md"
-      textAlign="left"
-      lineHeight="1.375"
-      fontWeight="400"
-      color="gray.500"
-      {...props}
-    >
-      {children}
-    </Text>
-  );
-};
-
-function DottedBox(isLight) {
-  return (
-    <Box position="absolute" left="-45px" top="-60px" height="full" maxW="700px" zIndex={-1}>
-      <svg
-        color={useColorModeValue('rgba(55,65,81, 0.3)', 'rgba(55,65,81, 0.9)')}
-        width="350"
-        height="320"
-        fill="none"
-      >
-        <defs>
-          <pattern
-            id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b"
-            x="0"
-            y="0"
-            width="20"
-            height="20"
-            patternUnits="userSpaceOnUse"
+    <Container maxW="6xl" p={{ base: 5, md: 8 }}>
+      {testimonials.map((obj, index) => (
+        <Fragment key={index}>
+          <Stack
+            mt={"150px"}
+            direction={{ base: 'column', sm: 'row' }}
+            bgGradient="linear(to-br, cornflowerBlue , lightGreen)"
+            spacing={{ base: 0, sm: 10 }}
+            p={{ base: 4, sm: 10 }}
+            rounded="lg"
+            justifyContent="center"
           >
-            <rect x="0" y="0" width="4" height="4" fill="currentColor"></rect>
-          </pattern>
-        </defs>
-        <rect width="404" height="404" fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)"></rect>
-      </svg>
-    </Box>
-  );
-}
+            <Box width="30rem" pos="relative" d={{ base: 'none', sm: 'block' }}>
+              <Image
+                size="2xl"
+                pos="absolute"
+                rounded="lg"
+                src={obj.image}
+                top="-6.5rem"
+                boxShadow="lg"
+              />
+            </Box>
 
-export default TechnologyAll;
+            <Stack direction="column" spacing={4} textAlign="left" maxW="4xl">
+              <Icon as={ImQuotesLeft} w={10} h={10} color="gray.700" />
+              <Text fontSize="md" fontWeight="medium">
+                {obj.content}
+              </Text>
+              <Stack alignItems={{ base: 'center', sm: 'flex-start' }} spacing={0}>
+                <Avatar
+                  size="xl"
+                  showBorder={true}
+                  borderColor="green.400"
+                  name="avatar"
+                  src={obj.image}
+                  d={{ base: 'block', sm: 'none' }}
+                />
+                <Text fontWeight="bold" fontSize="lg">
+                  {obj.name}
+                </Text>
+                <Text fontWeight="medium" fontSize="sm" color="gray.600">
+                  {obj.position}, {obj.company}
+                </Text>
+              </Stack>
+            </Stack>
+          </Stack>
+        </Fragment>
+      ))}
+    </Container>
+  );
+};
+
+export default TechnologySolo;
