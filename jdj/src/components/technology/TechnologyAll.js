@@ -9,16 +9,16 @@ import { tech_list } from '@/utils/Constant';
 const TechnologyAll = () => {
   return (
     <Box overflow={"hidden"}>
-      {tech_list.map((ele) => {
+      {tech_list.map((ele,idx) => {
         return (
-          <TechnologySolo key={ele.id} e={ele} />
+          <TechnologySolo key={ele.id} e={ele} idx={idx}/>
         )
       })}
     </Box>
   )
 }
 
-export const TechnologySolo = ({ e }) => {
+export const TechnologySolo = ({ e, idx }) => {
 
   const isLight = useSelector((state) => state.colorCode.isLight);
 
@@ -49,7 +49,7 @@ export const TechnologySolo = ({ e }) => {
                 {e.short}
               </Content>
             </Box>
-            <Link href="#" fontSize="sm" color="blue.400">
+            <Link href={`/technology/${idx}`} fontSize="sm" color="blue.400">
               MORE →
             </Link>
           </Stack>

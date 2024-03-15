@@ -1,6 +1,7 @@
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import TechnologySolo from "@/components/technology/TechnologySolo";
+import TechnologySoloHead from "@/components/technology/TechnologySoloHead";
 import { tech_list } from "@/utils/Constant";
 
 const TechnologyDetail = ({ params }) => {
@@ -11,7 +12,8 @@ const TechnologyDetail = ({ params }) => {
     return (
         <div>
             <Navbar />
-            <TechnologySolo />
+            <TechnologySolo techId={techId}/>
+            <TechnologySoloHead techId={techId}/>
             <Footer />
         </div>
     );
