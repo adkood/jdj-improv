@@ -4,6 +4,7 @@ import AllApplications from "@/components/application/AllApplication";
 import ApplicationHome from "@/components/application/ApplicationHome";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
+import SideMessageBox from "@/utils/SideMessageBox";
 import { Box } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 
@@ -15,6 +16,7 @@ const Applications = () => {
             <Navbar />
             <ApplicationHome />
             <AllApplications />
+            <SideMessageBox />
             <Footer />
         </Box>
     );

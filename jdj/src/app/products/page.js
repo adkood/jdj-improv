@@ -7,6 +7,7 @@ import ProductHome from "@/components/products/ProductHome";
 import ProductBottom from "@/components/products/ProductBottom";
 import { Box } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
+import SideMessageBox from "@/utils/SideMessageBox";
 
 export default function Products() {
 
@@ -17,6 +18,7 @@ export default function Products() {
         <ProductHome />
         <AllProducts />
         <ProductBottom />
+        <SideMessageBox />
         <Footer />
     </Box>
 }
