@@ -1,17 +1,33 @@
-'use client'
+'use client';
 
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyle from '@/utils/Animate.module.css';
-import { chakra, Container, Stack, Text, useColorModeValue, Image, Skeleton, Box, Link } from '@chakra-ui/react';
+import {
+  chakra, Container, Stack, Text, useColorModeValue, Image, Skeleton, SkeletonCircle, SkeletonText, Box, Link, Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { tech_list } from '@/utils/Constant';
+import { ChevronRightIcon } from '@chakra-ui/icons';
 
 const TechnologyAll = () => {
   return (
     <Box overflow={"hidden"}>
-      {tech_list.map((ele,idx) => {
+      <Container maxW="6xl" px={{ base: 6, md: 3 }} py={5}>
+        <Breadcrumb spacing='8px' pb={5} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color='#36454F' />}>
+          <BreadcrumbItem>
+            <BreadcrumbLink color='#36454F' fontWeight={"bold"} href='#'>HOME</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink fontWeight={"bold"} color={"cornflowerblue"}>TECHNOLOGY</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </Container>
+      {tech_list.map((ele, idx) => {
         return (
-          <TechnologySolo key={ele.id} e={ele} idx={idx}/>
+          <TechnologySolo key={ele.id} e={ele} idx={idx} />
         )
       })}
     </Box>
@@ -37,7 +53,7 @@ export const TechnologySolo = ({ e, idx }) => {
               objectFit="cover"
               src={e.image}
               rounded="md"
-              fallback={<Skeleton />}
+              onError={(e) => e.target.src = 'https://via.placeholder.com/300'}
             />
           </Box>
           <Stack direction="column" spacing={6} justifyContent="center">

@@ -86,7 +86,7 @@ const Home = () => {
             objectFit="cover"
             src={`./home.jpg`}
             rounded="md"
-            fallback={<Skeleton />}
+            onError={(e) => e.target.src = 'https://via.placeholder.com/300'}
           />
         </Box>
       </Stack>

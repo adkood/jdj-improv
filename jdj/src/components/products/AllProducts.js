@@ -1,10 +1,16 @@
 // 'use client'
 
 import React from 'react';
-import { Box, Badge, SimpleGrid, Container, Image, Link, Text } from '@chakra-ui/react';
+import {
+  Box, Badge, SimpleGrid, Container, Image, Link, Text, Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyles from '@/utils/Animate.module.css';
+import { ChevronRightIcon } from '@chakra-ui/icons';
 
 
 const dataList = [
@@ -37,6 +43,15 @@ const AllComponents = () => {
 
   return (
     <Container maxWidth="1200px" mx="auto" my="auto" p={{ base: 5, md: 10 }} bgColor={`${isLight ? '' : '#464544'}`}>
+      <Breadcrumb spacing='8px' pb={5} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color='#36454F' />}>
+        <BreadcrumbItem>
+          <BreadcrumbLink color='#36454F' fontWeight={"bold"} href='/'>HOME</BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink fontWeight={"bold"} color={"cornflowerblue"}>PRODUCTS</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
       <SimpleGrid columns={[1, 2, 3]} spacing="30px" overflow={"hidden"}>
         {dataList.map((blog) => {
           return (
@@ -54,7 +69,7 @@ const AllComponents = () => {
                   overflow="hidden"
                   position="relative"
                 >
-                  <Image src={blog.image} alt="Blog image" />
+                  <Image src={blog.image} onError={(e) => e.target.src = 'https://via.placeholder.com/300'} alt="Blog image" />
                   <Box p={{ base: 4, lg: 6 }} bgColor={"whiteSmoke"}>
                     <Box d="flex" alignItems="baseline">
                       <Box
@@ -62,13 +77,13 @@ const AllComponents = () => {
                         as="h2"
                         letterSpacing="wide"
                         textTransform="uppercase"
-                        ml="2"
+                        p={0.5}
                       >
                         {blog.title}
                       </Box>
                     </Box>
                     <Box>
-                      <Box color="gray.600" fontSize="sm">
+                      <Box color="gray.600" fontSize="sm" p={0.5}>
                         <Badge rounded="full" px="2" colorScheme="teal">
                           {blog.authorName}
                         </Badge>
@@ -80,7 +95,8 @@ const AllComponents = () => {
                       noOfLines={3}
                       lineHeight="tight"
                       color="gray.600"
-                      fontSize="sm"
+                      fontSize="md"
+                      p={0.5}
                     >
                       {blog.content}
                     </Text>

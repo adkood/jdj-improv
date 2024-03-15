@@ -10,57 +10,63 @@ import {
     Link,
     Icon,
     Container,
-    Stack
+    Stack,
+    Avatar
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { AiOutlineEye } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyles from '@/utils/Animate.module.css';
+import { FaQuoteRight } from 'react-icons/fa';
+import { GrTechnology } from "react-icons/gr";
+import { MdOutlineSettingsApplications } from "react-icons/md";
 
 const ProductBottom = () => {
+
     const isLight = useSelector((state) => state.colorCode.isLight);
 
     return (
-        <Container maxW="6xl" px={{ base: 6, md: 3 }} py={14}>
-            <Stack direction={{ base: 'column', md: 'row' }} spacing={2} justifyContent="center">
-                <Stack
-                    direction="column"
-                    spacing={6}
-                    justifyContent="center"
-                    maxW="500px"
-                    mb={{ base: 3, md: 0 }}
-                    mr={3}
-                >
-                    <Box>
-                        <chakra.h1 color={`${isLight ? '#36454F' : 'white'}`} fontSize="4xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
-                            Discover the essence of our products through a dual lens <br />
-                            <chakra.span color="cornflowerBlue">Technology</chakra.span> <br />
-                            and <br />
-                            <chakra.span color="cornflowerBlue">Applications</chakra.span>
-                        </chakra.h1>
-                    </Box>
+        <Container maxW="8xl" p={{ base: 10, md: 14 }}>
+            <VStack
+                spacing={3}
+                p={10}
+                bg={useColorModeValue('white', 'blackAlpha.600')}
+                border="3px solid"
+                borderColor="cornflowerBlue"
+                maxW="6xl"
+                margin="0 auto"
+                boxShadow="lg"
+                pos="relative"
+            >
+                <Icon
+                    as={FaQuoteRight}
+                    w={10}
+                    h={10}
+                    color="cornflowerBlue"
+                    left="-1.3rem"
+                    position="absolute"
+                    top="-1.5rem"
+                />
+                <Stack direction="column" spacing={5}>
+                    <Text color="gray.600" fontSize="2xl" lineHeight={1.2}>
+                        Discover the essence of our products through a dual lens, exploring both the intricate workings of the technology behind them and the diverse range of applications they serve.
+                    </Text>
                 </Stack>
-                <Stack
-                    spacing={{ base: 5, sm: 2 }}
-                    direction={{ base: 'column', sm: 'row' }}
-                    alignItems="center"
-                    overflow={"hidden"}
-                >
+                <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
                     <GetAnimation beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
-                        <Card detail="Technology Involved." href="/technology" isLight={isLight} />
+                        <Card detail="Technology Used" href="/technology" isLight={isLight} icon={GrTechnology} />
                     </GetAnimation>
-
-                    <GetAnimation beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
-                        <Card detail="Product Applications." href="/applications" isLight={isLight} />
+                    <GetAnimation m={10} beforeView={animateStyles.hiddenRight} afterView={animateStyles.visibleRight}>
+                        <Card detail="Product Applications" href="/applications" isLight={isLight} icon={MdOutlineSettingsApplications} />
                     </GetAnimation>
                 </Stack>
-            </Stack>
+            </VStack>
         </Container>
     );
 };
 
-const Card = ({ detail, href, isLight }) => {
+const Card = ({ detail, href, isLight, icon }) => {
     return (
         <motion.div whileHover={{ translateY: -5 }}>
             <Stack
@@ -88,11 +94,11 @@ const Card = ({ detail, href, isLight }) => {
                         lineHeight={0}
                         boxShadow="inset 0 0 1px 1px rgba(0, 0, 0, 0.015)}"
                     >
-                        <Icon as={AiOutlineEye} w={6} h={6} color="white" />
+                        <Icon as={icon} w={8} h={8} color="white" />
                     </Flex>
                     <VStack spacing={0} align="start" maxW="lg" h="100%">
                         <HStack spacing={2}>
-                            <Text as="h2" fontSize="lg" fontWeight="extrabold">
+                            <Text as="h2" fontSize="lg" color={"#36454F"} fontWeight="extrabold">
                                 {detail}
                             </Text>
                         </HStack>
@@ -107,7 +113,7 @@ const Card = ({ detail, href, isLight }) => {
                     _groupHover={{ visibility: 'visible', opacity: 1, height: '40px' }}
                     transition="opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, height 0.3s ease-in-out"
                 >
-                    <Link href={href} fontSize="md" color={"cornflowerblue"}>visit</Link>
+                    <Link href={href} fontSize="md" color={"cornflowerblue"}>VISIT...</Link>
                 </Flex>
             </Stack>
         </motion.div>

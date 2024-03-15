@@ -9,7 +9,7 @@ export default function Home() {
     <Navbar />
     <MyHome />
     <AboutUs />
-    <SideMessageBox />
+    {/* <SideMessageBox /> */}
     <Footer />
   </>
 }

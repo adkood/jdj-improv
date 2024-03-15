@@ -10,9 +10,9 @@ const AboutUs = () => {
     const isLight = useSelector((state) => state.colorCode.isLight);
 
     return (
-        <Stack id="aboutUs" minH="100vh" direction={{ base: 'column', md: 'row' }} p={4} bgColor={`${isLight ? '' : '#464544'}`}>
+        <Stack id="aboutUs" minH="100vh" direction={{ base: 'column', md: 'row' }} p={10} bgColor={`${isLight ? '' : '#464544'}`}>
             <Flex flex={1}>
-                <Image rounded="md" alt="Cover image" objectFit="cover" src="./aboutUs.jpeg" />
+                <Image rounded="md" alt="Cover image" objectFit="cover" src="./aboutUs.jpeg" onError={(e) => e.target.src = 'https://via.placeholder.com/300'} />
             </Flex>
             <Flex p={8} flex={1} align="center" justifyContent="center">
                 <Flex direction="column">

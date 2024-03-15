@@ -16,7 +16,7 @@ const Technology = () => {
             <Navbar />
             <TechnologyHome />
             <TechnologyAll />
-            <SideMessageBox />
+            {/* <SideMessageBox /> */}
             <Footer />
         </Box>
     )

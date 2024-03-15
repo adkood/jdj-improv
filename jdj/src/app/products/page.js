@@ -18,7 +18,7 @@ export default function Products() {
         <ProductHome />
         <AllProducts />
         <ProductBottom />
-        <SideMessageBox />
+        {/* <SideMessageBox /> */}
         <Footer />
     </Box>
 }

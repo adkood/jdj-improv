@@ -16,7 +16,7 @@ const Applications = () => {
             <Navbar />
             <ApplicationHome />
             <AllApplications />
-            <SideMessageBox />
+            {/* <SideMessageBox /> */}
             <Footer />
         </Box>
     );
