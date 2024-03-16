@@ -27,7 +27,7 @@ const TechnologyHome = () => {
         >
           <Stack pos="relative" zIndex={1} direction="column" spacing={5} textAlign="left">
             <Stack direction="row" alignItems="center">
-              <GrTechnology fontSize={"3rem"} color={"cornflowerBlue"} />
+              {/* <GrTechnology fontSize={"3rem"} color={"cornflowerBlue"} /> */}
               <chakra.span fontSize="4xl" lineHeight={1.2} color={textColor} fontWeight="bold">
                 TECHNOLOGY USED
               </chakra.span>

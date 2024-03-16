@@ -27,7 +27,7 @@ const ProductBottom = () => {
     const isLight = useSelector((state) => state.colorCode.isLight);
 
     return (
-        <Container maxW="8xl" p={{ base: 10, md: 14 }}>
+        <Container maxW="8xl" p={{ base: 10, md: 14 }} borderRadius={10}>
             <VStack
                 spacing={3}
                 p={10}
@@ -38,6 +38,7 @@ const ProductBottom = () => {
                 margin="0 auto"
                 boxShadow="lg"
                 pos="relative"
+                rounded={'md'}
             >
                 <Icon
                     as={FaQuoteRight}

@@ -27,7 +27,7 @@ const ApplicationHome = () => {
                 >
                     <Stack pos="relative" zIndex={1} direction="column" spacing={5} textAlign="left">
                         <Stack direction="row" alignItems="center">
-                            <MdOutlineSettingsApplications fontSize={"3rem"} color={"cornflowerBlue"} />
+                            {/* <MdOutlineSettingsApplications fontSize={"3rem"} color={"cornflowerBlue"} /> */}
                             <chakra.span fontSize="4xl" lineHeight={1.2} color={textColor} fontWeight="bold">
                                 PRODUCT APPLICATIONS
                             </chakra.span>

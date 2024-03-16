@@ -47,6 +47,9 @@ const TechnologySoloHead = ({ techId }) => {
         </Breadcrumb>
       </Container>
       <Container maxWidth={"1400px"} p={{ base: 1, md: 10 }}>
+          <Text pb={3} fontWeight={"bold"} fontSize={'3xl'} noOfLines={2} color="gray.600">
+            {tech_list[techId].name}
+          </Text>
         <Stack direction={{ base: 'column', md: 'row' }} spacing={{ base: 6, md: 10 }}>
           <Box
             borderWidth="1px"
@@ -63,13 +66,13 @@ const TechnologySoloHead = ({ techId }) => {
               h="auto"
             />
             <Box p={{ base: 3, sm: 5 }}>
-              <Text fontSize={{ base: 'md', sm: 'lg' }} noOfLines={2} color="gray.600">
-                {tech_list[techId].name}
+              <Text fontSize={"1.25rem"} color="gray.600">
+                {tech_list[techId].long}
               </Text>
             </Box>
           </Box>
           <VStack align="start" spacing={6} flex={{ base: '1', md: '0.4' }}>
-            <Heading fontSize="4xl" color={"cornflowerblue"} fontWeight="600">
+            <Heading fontSize="2xl" color={"cornflowerblue"} fontWeight="600">
               ADVANTAGES...
             </Heading>
             <Box>
@@ -83,7 +86,7 @@ const TechnologySoloHead = ({ techId }) => {
                 </GetAnimation>
               })}
             </Box>
-            <Heading fontSize="4xl" color={"cornflowerblue"} fontWeight="600">
+            <Heading fontSize="2xl" color={"cornflowerblue"} fontWeight="600">
               APPLICATIONS...
             </Heading>
             <Box>
