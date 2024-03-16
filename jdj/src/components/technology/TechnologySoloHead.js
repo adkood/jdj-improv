@@ -47,9 +47,9 @@ const TechnologySoloHead = ({ techId }) => {
         </Breadcrumb>
       </Container>
       <Container maxWidth={"1400px"} p={{ base: 1, md: 10 }}>
-          <Text pb={3} fontWeight={"bold"} fontSize={'3xl'} noOfLines={2} color="gray.600">
-            {tech_list[techId].name}
-          </Text>
+        <Text pb={3} fontWeight={"bold"} fontSize={'3xl'} noOfLines={2} color="gray.600">
+          {tech_list[techId].name}
+        </Text>
         <Stack direction={{ base: 'column', md: 'row' }} spacing={{ base: 6, md: 10 }}>
           <Box
             borderWidth="1px"
@@ -75,7 +75,7 @@ const TechnologySoloHead = ({ techId }) => {
             <Heading fontSize="2xl" color={"cornflowerblue"} fontWeight="600">
               ADVANTAGES...
             </Heading>
-            <Box>
+            <Box overflow={"hidden"}>
               {tech_list[techId].advantage.map((ele, idx) => {
                 return <GetAnimation key={ele.id} beforeView={animateStyle.hiddenRight} afterView={animateStyle.visibleRight}>
                   {idx === tech_list[techId].advantage.length - 1 ? <MilestoneItem fontSize="xl" skipTrail icon={FiPackage}>
@@ -89,7 +89,7 @@ const TechnologySoloHead = ({ techId }) => {
             <Heading fontSize="2xl" color={"cornflowerblue"} fontWeight="600">
               APPLICATIONS...
             </Heading>
-            <Box>
+            <Box overflow={"hidden"}>
               {tech_list[techId].application.map((ele, idx) => {
                 return <GetAnimation key={ele.id} beforeView={animateStyle.hiddenRight} afterView={animateStyle.visibleRight}>
                   {idx === tech_list[techId].application.length - 1 ? <MilestoneItem fontSize="xl" skipTrail icon={FiPackage}>
