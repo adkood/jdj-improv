@@ -25,11 +25,13 @@ const TechnologyAll = () => {
           </BreadcrumbItem>
         </Breadcrumb>
       </Container>
-      {tech_list.map((ele, idx) => {
-        return (
-          <TechnologySolo key={ele.id} e={ele} idx={idx} />
-        )
-      })}
+      <Box>
+        {tech_list.map((ele, idx) => {
+          return (
+            <TechnologySolo key={ele.id} e={ele} idx={idx} />
+          )
+        })}
+      </Box>
     </Box>
   )
 }
