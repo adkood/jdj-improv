@@ -28,7 +28,7 @@ const ContactHome = () => {
         </Box>
 
         <Stack direction="column" spacing={4} textAlign="left" maxW="4xl">
-          <chakra.h1 color={`white`} fontSize="3xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
+          <chakra.h1 color={`#36454F`} fontSize="3xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
             CONNECT WITH US <br />
             <chakra.span color={"cornflowerBlue"}>@ JDJ</chakra.span>
           </chakra.h1>

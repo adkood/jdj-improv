@@ -23,11 +23,10 @@ const ProductHome = () => {
           p={{ base: 4, sm: 8 }}
           overflow="hidden"
           rounded="2xl"
-          bgColor={isLight ? '#e9eef5' : '#656261'}
+          bgColor={isLight ? '' : '#656261'}
         >
           <Stack pos="relative" zIndex={1} direction="column" spacing={5} textAlign="left">
             <Stack direction="row" alignItems="center">
-              {/* <MdOutlineProductionQuantityLimits fontSize={"3rem"} color={"cornflowerBlue"} /> */}
               <chakra.span fontSize="4xl" lineHeight={1.2} color={textColor} fontWeight="bold">
                 OUR PRODUCTS
               </chakra.span>

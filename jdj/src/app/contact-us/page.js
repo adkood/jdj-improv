@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 const ContactPage = () => {
     const isLight = useSelector((state) => state.colorCode.isLight);
     return (
-        <Box bgColor={`${isLight ? '#e9eef5' : '#464544'}`}>
+        <Box bgColor={`${isLight ? '' : '#464544'}`}>
             <Navbar />
             <ContactHome />
             <ContactUs />

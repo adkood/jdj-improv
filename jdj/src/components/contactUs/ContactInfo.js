@@ -62,7 +62,7 @@ const Card = ({ value, icon }) => {
     return (
         <HStack
             p={{ base: 3, sm: 6 }}
-            bgColor={'#e9eef5'}
+            bgColor={'white'}
             spacing={5}
             rounded="lg"
             alignItems="center"
