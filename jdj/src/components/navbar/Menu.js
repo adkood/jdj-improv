@@ -51,7 +51,7 @@ const CustomMenu = () => {
                         Application
                     </MenuItem>
                 </Link>
-                <Link href={"/aboutUs"}>
+                <Link href={"/contact-us"}>
                     <MenuItem icon={<IoIosContact size={"1.1rem"} />} >
                         Contact-Us
                     </MenuItem>

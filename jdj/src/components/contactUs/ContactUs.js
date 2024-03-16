@@ -27,10 +27,9 @@ const ContactUs = () => {
             textAlign="left"
             lineHeight="1.375"
             fontWeight="400"
-            color={`${isLight ? 'gray.500' : 'white'}`}
+            color={`${isLight ? 'gray.600' : 'white'}`}
           >
-            We'd love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to say hello, don't hesitate to reach out. Our team is here to help.
-          </Text>
+            We&apos;d love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to say hello, don&apos;t hesitate to reach out. Our team is here to help.          </Text>
           <ContactInfo />
         </Stack>
         <Box ml={{ base: 0, md: 5 }} pos="relative">

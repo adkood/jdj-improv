@@ -31,7 +31,7 @@ const Home = () => {
   }
 
   return (
-    <Container maxW="100%" px={{ base: 6, md: 3 }} py={40} bgColor={`${isLight ? '' : '#464544'}`}>
+    <Container maxW="100%" px={{ base: 6, md: 3 }} py={40} bgColor={`${isLight ? '#e9eef5' : '#464544'}`}>
       <Stack direction={{ base: 'column', md: 'row' }} justifyContent="center">
         <Stack direction="column" spacing={6} justifyContent="center" maxW="480px" overflow={"hidden"} >
           <chakra.h1 color={`${isLight ? '#36454F' : 'white'}`} fontSize="5xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
@@ -44,7 +44,7 @@ const Home = () => {
               textAlign="left"
               lineHeight="1.375"
               fontWeight="400"
-              color={`${isLight ? 'gray.500' : 'white'}`}
+              color={`${isLight ? 'gray.600' : 'white'}`}
             >
               JD JAIN AND COMPANY PROUDLY PRESENTS ITS MANUFACTURING UNIT JDJ ALLOYS AS IT EMBARKS ON A GROUNDBREAKING VENTURE.
             </Text>

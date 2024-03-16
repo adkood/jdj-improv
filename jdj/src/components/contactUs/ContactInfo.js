@@ -62,7 +62,7 @@ const Card = ({ value, icon }) => {
     return (
         <HStack
             p={{ base: 3, sm: 6 }}
-            bg={useColorModeValue('gray.100', 'gray.800')}
+            bgColor={'#e9eef5'}
             spacing={5}
             rounded="lg"
             alignItems="center"
@@ -105,7 +105,7 @@ const LineWithDot = () => {
                 left="50%"
                 height="calc(100% + 10px)"
                 border="1px solid"
-                borderColor={useColorModeValue('gray.200', 'gray.700')}
+                borderColor={'grey'}
                 top="0px"
             ></chakra.span>
             <Box pos="relative" p="10px">

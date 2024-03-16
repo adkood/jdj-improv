@@ -8,11 +8,6 @@ import Link from 'next/link';
 import { WiDaySunny } from "react-icons/wi";
 import { IoMoonOutline } from "react-icons/io5";
 import { useSelector, useDispatch } from 'react-redux';
-import { MdOutlineSettingsApplications } from "react-icons/md";
-import { MdOutlineProductionQuantityLimits } from "react-icons/md";
-import { GrTechnology } from "react-icons/gr";
-import { IoIosContact } from "react-icons/io";
-
 
 const Navbar = () => {
 
@@ -62,52 +57,44 @@ const Navbar = () => {
         {!isMobile && (
           <Flex>
             <Link href="/products">
-              <Flex alignItems={"center"} mr={5}>
-                <MdOutlineProductionQuantityLimits style={{padding: "2px"}} fontSize={"2rem"} color='cornflowerblue' />
-                <Text
-                  fontSize="xl"
-                  color={`${isLight ? '#36454F' : 'white'}`}
-                  _hover={{ color: 'cornflowerblue' }}
-                >
-                  Products
-                </Text>
-              </Flex>
+              <Text
+                fontSize="xl"
+                mr={5}
+                color={`${isLight ? '#36454F' : 'white'}`}
+                _hover={{ color: 'cornflowerblue' }}
+              >
+                Products
+              </Text>
             </Link>
             <Link href="/technology">
-              <Flex alignItems={"center"} mr={5}>
-                <GrTechnology style={{padding: "2px"}} fontSize={"2rem"} color='cornflowerblue' />
-                <Text
-                  fontSize="xl"
-                  color={`${isLight ? '#36454F' : 'white'}`}
-                  _hover={{ color: 'cornflowerblue' }}
-                >
-                  Technology
-                </Text>
-              </Flex>
+              <Text
+                fontSize="xl"
+                mr={5}
+                color={`${isLight ? '#36454F' : 'white'}`}
+                _hover={{ color: 'cornflowerblue' }}
+              >
+                Technology
+              </Text>
             </Link>
             <Link href="/applications">
-              <Flex alignItems={"center"} mr={5}>
-                <MdOutlineSettingsApplications style={{padding: "2px"}} fontSize={"2rem"} color='cornflowerblue' />
-                <Text
-                  fontSize="xl"
-                  color={`${isLight ? '#36454F' : 'white'}`}
-                  _hover={{ color: 'cornflowerblue' }}
-                >
-                  Application
-                </Text>
-              </Flex>
+              <Text
+                fontSize="xl"
+                mr={5}
+                color={`${isLight ? '#36454F' : 'white'}`}
+                _hover={{ color: 'cornflowerblue' }}
+              >
+                Application
+              </Text>
             </Link>
             <Link href="/contact-us">
-            <Flex alignItems={"center"} mr={5}>
-                <IoIosContact style={{padding: "2px"}} fontSize={"2rem"} color='cornflowerblue' />
-                <Text
-                  fontSize="xl"
-                  color={`${isLight ? '#36454F' : 'white'}`}
-                  _hover={{ color: 'cornflowerblue' }}
-                >
-                  Contact-Us
-                </Text>
-              </Flex>
+              <Text
+                fontSize="xl"
+                mr={5}
+                color={`${isLight ? '#36454F' : 'white'}`}
+                _hover={{ color: 'cornflowerblue' }}
+              >
+                Contact-Us
+              </Text>
             </Link>
           </Flex>
         )}

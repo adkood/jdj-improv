@@ -31,7 +31,7 @@ const ProductBottom = () => {
             <VStack
                 spacing={3}
                 p={10}
-                bg={useColorModeValue('white', 'blackAlpha.600')}
+                bgColor={"#e9eef5"}
                 border="3px solid"
                 borderColor="cornflowerBlue"
                 maxW="6xl"

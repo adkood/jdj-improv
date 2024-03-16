@@ -56,7 +56,7 @@ const Card = ({ title, href }) => {
     return (
         <HStack
             p={{ base: 3, sm: 5 }}
-            bg={useColorModeValue('gray.100', 'gray.800')}
+            bgColor={"whiteSmoke"}
             spacing={5}
             rounded="lg"
             alignItems="center"
@@ -104,7 +104,8 @@ const LineWithDot = () => {
                 left="50%"
                 height="calc(100% + 10px)"
                 border="1px solid"
-                borderColor={useColorModeValue('gray.200', 'gray.700')}
+                borderColor={"grey"}
+                // borderColor={useColorModeValue('gray.200', 'gray.700')}
                 top="0px"
             ></chakra.span>
             <Box pos="relative" p="10px">
