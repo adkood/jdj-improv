@@ -97,7 +97,7 @@ const Navbar = () => {
                 </Text>
               </Flex>
             </Link>
-            <Link href="/contact">
+            <Link href="/contact-us">
             <Flex alignItems={"center"} mr={5}>
                 <IoIosContact style={{padding: "2px"}} fontSize={"2rem"} color='cornflowerblue' />
                 <Text

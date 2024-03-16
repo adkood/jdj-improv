@@ -14,7 +14,7 @@ const AboutUs = () => {
             <Flex flex={1}>
                 <Image rounded="md" alt="Cover image" objectFit="cover" src="./aboutUs.jpeg" onError={(e) => e.target.src = 'https://via.placeholder.com/300'} />
             </Flex>
-            <Flex p={8} flex={1} align="center" justifyContent="center">
+            <Flex p={10} flex={1} align="center" justifyContent="center">
                 <Flex direction="column">
                     <Text fontWeight="extrabold" fontSize="xx-large" mb={6} color={"cornflowerblue"}>
                         PASSION FOR PROGRESS, PURPOSE FOR PEOPLE.
