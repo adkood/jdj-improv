@@ -37,24 +37,20 @@ const ConnectWithUs = () => {
             fallback={<Skeleton />}
           />
         </Box>
-        <Stack direction="column" spacing={6} justifyContent="center" overflow={"hidden"} mt={3}>
-          <GetAnimation beforeView={animateStyle.hiddenRight} afterView={animateStyle.visibleRight}>
-            <chakra.h1 fontSize="4xl" color={"cornflowerblue"} lineHeight={1} fontWeight="bold" textAlign="left">
-              JOIN US FOR QUALITY PRODUCTS AND EXPERTISE!
-            </chakra.h1>
-          </GetAnimation>
-          <GetAnimation beforeView={animateStyle.hiddenRight} afterView={animateStyle.visibleRight}>
-            <Box>
+        <Stack direction="column" spacing={6} justifyContent="center" mt={3}>
+          <chakra.h1 fontSize="4xl" color={"cornflowerblue"} lineHeight={1} fontWeight="bold" textAlign="left">
+            JOIN US FOR QUALITY PRODUCTS AND EXPERTISE!
+          </chakra.h1>
+          <Box overflow={"hidden"}>
+            <GetAnimation beforeView={animateStyle.hiddenRight} afterView={animateStyle.visibleRight}>
               <Content isLight={isLight}>
                 We&apos;d love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to say hello, don&apos;t hesitate to reach out. Our team is here to help.
               </Content>
-            </Box>
-          </GetAnimation>
-          <GetAnimation beforeView={animateStyle.hiddenRight} afterView={animateStyle.visibleRight}>
-            <Link href="/contact-us" fontSize="md" style={{ color: 'cornflowerBlue' }}>
-              BUILD CONNECTION →
-            </Link>
-          </GetAnimation>
+            </GetAnimation>
+          </Box>
+          <Link href="/contact-us" fontSize="md" style={{ color: 'cornflowerBlue' }}>
+            BUILD CONNECTION →
+          </Link>
         </Stack>
       </Stack>
     </Container>
