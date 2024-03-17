@@ -46,7 +46,7 @@ const ConnectWithUs = () => {
           <GetAnimation beforeView={animateStyle.hiddenRight} afterView={animateStyle.visibleRight}>
             <Box>
               <Content isLight={isLight}>
-                We'd love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to say hello, don't hesitate to reach out. Our team is here to help.
+                We&apos;d love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to say hello, don&apos;t hesitate to reach out. Our team is here to help.
               </Content>
             </Box>
           </GetAnimation>
