@@ -37,7 +37,7 @@ const ConnectWithUs = () => {
             fallback={<Skeleton />}
           />
         </Box>
-        <Stack direction="column" spacing={6} justifyContent="center">
+        <Stack direction="column" spacing={6} justifyContent="center" overflow={"hidden"} mt={3}>
           <GetAnimation beforeView={animateStyle.hiddenRight} afterView={animateStyle.visibleRight}>
             <chakra.h1 fontSize="4xl" color={"cornflowerblue"} lineHeight={1} fontWeight="bold" textAlign="left">
               JOIN US FOR QUALITY PRODUCTS AND EXPERTISE!
