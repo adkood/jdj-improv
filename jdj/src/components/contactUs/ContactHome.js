@@ -1,12 +1,9 @@
-'use client';
 
 import {
   chakra, Link, Stack, Box, Button, useColorModeValue, HStack, Image,
 } from '@chakra-ui/react';
-import { useSelector } from 'react-redux';
 
 const ContactHome = () => {
-  const isLight = useSelector((state) => state.colorCode.isLight);
   const bgColor = useColorModeValue('white', 'gray.800');
 
   return (
@@ -18,7 +15,7 @@ const ContactHome = () => {
           p={{ base: 4, sm: 8 }}
           overflow="hidden"
           rounded="2xl"
-          bgColor={isLight ? 'transparent' : '#656261'}
+          bgColor='transparent'
         >
           <Stack pos="relative" zIndex={1} direction="column" spacing={5} alignItems="center">
             <Box width="20rem" pos="relative" d={{ base: 'none', sm: 'block' }}>

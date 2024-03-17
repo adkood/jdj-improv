@@ -43,11 +43,10 @@ const AllComponents = () => {
 
   return (
     <Container maxWidth="1200px" mx="auto" my="auto" p={{ base: 5, md: 10 }} bgColor={`${isLight ? '' : '#464544'}`}>
-      <Breadcrumb spacing='8px' pb={8} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color='#36454F' />}>
+      <Breadcrumb spacing='8px' pb={8} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color={isLight ? "#36454F" : "whiteSmoke"} />}>
         <BreadcrumbItem>
-          <BreadcrumbLink color='#36454F' fontWeight={"bold"} href='/'>HOME</BreadcrumbLink>
+          <BreadcrumbLink color={isLight ? "#36454F" : "whiteSmoke"} fontWeight={"bold"} href='/'>HOME</BreadcrumbLink>
         </BreadcrumbItem>
-
         <BreadcrumbItem isCurrentPage>
           <BreadcrumbLink fontWeight={"bold"} color={"cornflowerblue"}>PRODUCTS</BreadcrumbLink>
         </BreadcrumbItem>

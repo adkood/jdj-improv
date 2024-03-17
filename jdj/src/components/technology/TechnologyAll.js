@@ -13,12 +13,14 @@ import { tech_list } from '@/utils/Constant';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 
 const TechnologyAll = () => {
+
+  const isLight = useSelector((state) => state.colorCode.isLight);
   return (
     <Box overflow={"hidden"}>
       <Container maxW="6xl" px={{ base: 6, md: 3 }} py={5}>
-        <Breadcrumb spacing='8px' pb={5} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color='#36454F' />}>
+        <Breadcrumb spacing='8px' pb={5} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color={isLight ? "#36454F" : "whiteSmoke"} />}>
           <BreadcrumbItem>
-            <BreadcrumbLink color='#36454F' fontWeight={"bold"} href='#'>HOME</BreadcrumbLink>
+            <BreadcrumbLink color={isLight ? "#36454F" : "whiteSmoke"} fontWeight={"bold"} href='#'>HOME</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
             <BreadcrumbLink fontWeight={"bold"} color={"cornflowerblue"}>TECHNOLOGY</BreadcrumbLink>
@@ -27,16 +29,14 @@ const TechnologyAll = () => {
       </Container>
       {tech_list.map((ele, idx) => {
         return (
-          <TechnologySolo key={ele.id} e={ele} idx={idx} />
+          <TechnologySolo isLight={isLight} key={ele.id} e={ele} idx={idx} />
         )
       })}
     </Box>
   )
 }
 
-export const TechnologySolo = ({ e, idx }) => {
-
-  const isLight = useSelector((state) => state.colorCode.isLight);
+export const TechnologySolo = ({ e, idx , isLight}) => {
 
   return (
     <GetAnimation beforeView={animateStyle.hiddenLeft} afterView={animateStyle.VisibleLeft}>

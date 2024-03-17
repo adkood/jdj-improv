@@ -19,6 +19,7 @@ import {
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyle from '@/utils/Animate.module.css';
 import { ChevronRightIcon } from '@chakra-ui/icons';
+import { useSelector } from 'react-redux';
 
 export const appli_list = [{
     id: '1', image: 'https://i.ibb.co/Jj59pLY/management-1031985.jpg', name: "Cables", short: 'Wire & Cable manufacturing with JDJ’s copper is highly beneficial due to its high purity and high electrical conductivity.', long: 'The electrical conductivity though decreases during the initial wire drawing process but this regains subsequently during annealing process due to high recrystallisation temperature. The electrical and mechanical properties are retained due to high plastic deformation during the fine wire drawing process. The excellent ductility of JDJ’s copper facilitates high speed wire drawing in multiwire drawing machine as well as stranding, bunching, transposing, shielding and tinning.', extra: ["Power Cables",
@@ -42,12 +43,13 @@ export const appli_list = [{
 const AllApplications = () => {
     const isMobile = useBreakpointValue({ base: true, md: false });
     const isDesktop = useBreakpointValue({ base: false, md: true });
+    const isLight = useSelector((state) => state.colorCode.isLight);
 
     return (
         <Container maxWidth="7xl" p={{ base: 2, sm: 10 }} overflow={"hidden"}>
-            <Breadcrumb spacing='8px'mb={3} pb={5} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color='#36454F' />}>
+            <Breadcrumb spacing='8px' mb={3} pb={5} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color={isLight ? "#36454F" : "whiteSmoke"} />}>
                 <BreadcrumbItem>
-                    <BreadcrumbLink color='#36454F' fontWeight={"bold"} href='/'>HOME</BreadcrumbLink>
+                    <BreadcrumbLink color={isLight ? "#36454F" : "whiteSmoke"} fontWeight={"bold"} href='/'>HOME</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbItem isCurrentPage>
                     <BreadcrumbLink fontWeight={"bold"} color={"cornflowerblue"}>APPLICATION</BreadcrumbLink>
