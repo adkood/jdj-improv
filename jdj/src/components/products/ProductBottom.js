@@ -14,8 +14,12 @@ import {
 } from '@chakra-ui/react';
 import { GoChevronRight } from 'react-icons/go';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
 const ProductBottom = () => {
+
+    const isLight = useSelector((state) => state.colorCode.isLight);
+
     return (
         <Container maxW="6xl" px={{ base: 6, md: 3 }} py={14}>
             <Stack direction={{ base: 'column', md: 'row' }} spacing={2} justifyContent="center">
@@ -27,7 +31,7 @@ const ProductBottom = () => {
                     mb={{ base: 3, md: 0 }}
                 >
                     <Box>
-                        <chakra.h1 fontSize="3xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
+                        <chakra.h1 color={isLight ? "#36454F" : "white"} fontSize="3xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
                             EXPLORE PRODUCTS THROUGH DUAL LENS <br />
                             <chakra.span color="cornflowerBlue">TECHNOLOGY</chakra.span> <br /> AND <br />
                             <chakra.span color="cornflowerBlue">APPLICATION</chakra.span>
@@ -44,8 +48,8 @@ const ProductBottom = () => {
                         detail="Explore the technology involved to make our products better."
                         href={"/technology"}
                     />
-                    <Card heading="APPLICATION" detail="Know the wide range of applications of our project." 
-                    href={"/applications"}/>
+                    <Card heading="APPLICATION" detail="Know the wide range of applications of our project."
+                        href={"/applications"} />
                 </Stack>
             </Stack>
         </Container>
@@ -77,12 +81,12 @@ const Card = ({ heading, detail, href }) => {
                 {detail}
             </Text>
             <Link href={href}>
-            <HStack color="cornflowerBlue" alignItems="center">
-                <Text fontSize="sm" textAlign="left" fontWeight="600">
-                    EXPLORE
-                </Text>
-                <Icon as={GoChevronRight} w={4} h={4} />
-            </HStack>
+                <HStack color="cornflowerBlue" alignItems="center">
+                    <Text fontSize="sm" textAlign="left" fontWeight="600">
+                        EXPLORE
+                    </Text>
+                    <Icon as={GoChevronRight} w={4} h={4} />
+                </HStack>
             </Link>
         </Stack>
     );
