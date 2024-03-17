@@ -46,7 +46,7 @@ const TechnologySoloHead = ({ techId }) => {
           </BreadcrumbItem>
         </Breadcrumb>
       </Container>
-      <Container maxWidth={"1400px"} p={{ base: 1, md: 10 }}>
+      <Container maxWidth={"1400px"} p={{ base: 3, md: 10 }}>
         <Text pb={3} fontWeight={"bold"} fontSize={'3xl'} noOfLines={2} color="gray.600">
           {tech_list[techId].name}
         </Text>
