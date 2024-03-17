@@ -6,14 +6,18 @@ import L from "leaflet"; // Import Leaflet library
 import "leaflet/dist/leaflet.css";
 import { Spinner } from "@chakra-ui/react";
 
-// Custom red icon
-const redIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
+
+let redIcon;
+
+if (typeof window !== 'undefined') {
+  redIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  })
+}
 
 const LeafletMap = ({ center, zoom }) => {
   return (
