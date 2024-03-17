@@ -1,7 +1,7 @@
 'use client';
 
-import GetAnimation from '@/utils/GetAnimation';
-import animateStyle from '@/utils/Animate.module.css';
+// import GetAnimation from '@/utils/GetAnimation';
+// import animateStyle from '@/utils/Animate.module.css';
 import {
   chakra,
   Container,
@@ -42,11 +42,9 @@ const ConnectWithUs = () => {
             JOIN US FOR QUALITY PRODUCTS AND EXPERTISE!
           </chakra.h1>
           <Box overflow={"hidden"}>
-            <GetAnimation beforeView={animateStyle.hiddenRight} afterView={animateStyle.visibleRight}>
-              <Content isLight={isLight}>
-                We&apos;d love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to say hello, don&apos;t hesitate to reach out. Our team is here to help.
-              </Content>
-            </GetAnimation>
+            <Content isLight={isLight}>
+              We&apos;d love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to say hello, don&apos;t hesitate to reach out. Our team is here to help.
+            </Content>
           </Box>
           <Link href="/contact-us" fontSize="md" style={{ color: 'cornflowerBlue' }}>
             BUILD CONNECTION →
