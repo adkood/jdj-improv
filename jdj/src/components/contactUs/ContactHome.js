@@ -1,40 +1,36 @@
-'use client'
+'use client';
 
-import { chakra, Container, Stack, Icon, Image, Box } from '@chakra-ui/react';
+import {
+  chakra, Link, Stack, Box, Button, useColorModeValue, HStack, Image,
+} from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 
 const ContactHome = () => {
-
   const isLight = useSelector((state) => state.colorCode.isLight);
+  const bgColor = useColorModeValue('white', 'gray.800');
 
   return (
-    <Container maxW="8xl" p={{ base: 5, md: 8 }}>
-      <Stack
-        mt={"125px"}
-        direction={{ base: 'column', sm: 'row' }}
-        bgGradient="linear(to-br, cornflowerBlue, lightGreen)"
-        spacing={{ base: 0, sm: 10 }}
-        p={{ base: 4, sm: 10 }}
-        rounded="lg"
-        justifyContent="center"
-      >
-        <Box width="20rem" pos="relative" d={{ base: 'none', sm: 'block' }}>
-          <Image
-            pos="absolute"
-            rounded="lg"
-            src={'location.svg'}
-            top="-7.3rem"
-          />
+    <Box pb={8}>
+      <Stack pos="relative" bgColor={`cornflowerBlue`} height="250px" w="100%"></Stack>
+      <Box maxW="5xl" p={4} isolation="isolate" zIndex={3} mt="-10rem" marginInline="auto">
+        <Box
+          bg={bgColor}
+          p={{ base: 4, sm: 8 }}
+          overflow="hidden"
+          rounded="2xl"
+          bgColor={isLight ? 'transparent' : '#656261'}
+        >
+          <Stack pos="relative" zIndex={1} direction="column" spacing={5} alignItems="center">
+            <Box width="20rem" pos="relative" d={{ base: 'none', sm: 'block' }}>
+              <Image
+                rounded="lg"
+                src={'location.svg'}
+              />
+            </Box>
+          </Stack>
         </Box>
-
-        <Stack direction="column" spacing={4} textAlign="left" maxW="4xl">
-          <chakra.h1 color={`#36454F`} fontSize="3xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
-            CONNECT WITH US <br />
-            <chakra.span color={"cornflowerBlue"}>@ JDJ</chakra.span>
-          </chakra.h1>
-        </Stack>
-      </Stack>
-    </Container>
+      </Box>
+    </Box>
   );
 };
 

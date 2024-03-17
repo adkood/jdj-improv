@@ -19,9 +19,13 @@ const ContactUs = () => {
   const isLight = useSelector((state) => state.colorCode.isLight);
 
   return (
-    <Container maxW="100%" px={{ base: 6, md: 3 }} py={16} bgColor={`${isLight ? '' : '#464544'}`}>
+    <Container maxW="100%" px={{ base: 6, md: 3 }} py={13} bgColor={`${isLight ? '' : '#464544'}`}>
       <Stack direction={{ base: 'column', md: 'row' }} justifyContent="center">
         <Stack direction="column" spacing={6} justifyContent="center" maxW="600px" overflow={"hidden"} >
+          <chakra.h1 color={`#36454F`} fontSize="3xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
+            CONNECT WITH US <br />
+            <chakra.span color={"cornflowerBlue"}>@ JDJ</chakra.span>
+          </chakra.h1>
           <Text
             fontSize="1.5rem"
             textAlign="left"
@@ -29,7 +33,8 @@ const ContactUs = () => {
             fontWeight="400"
             color={`${isLight ? 'gray.600' : 'white'}`}
           >
-            We&apos;d love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to say hello, don&apos;t hesitate to reach out. Our team is here to help.          </Text>
+            We&apos;d love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to say hello, don&apos;t hesitate to reach out. Our team is here to help.
+          </Text>
           <ContactInfo />
         </Stack>
         <Box ml={{ base: 0, md: 5 }} pos="relative">
