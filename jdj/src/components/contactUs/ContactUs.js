@@ -22,7 +22,7 @@ const ContactUs = () => {
     <Container maxW="100%" px={{ base: 6, md: 3 }} py={13} bgColor={`${isLight ? '' : '#464544'}`}>
       <Stack direction={{ base: 'column', md: 'row' }} justifyContent="center">
         <Stack direction="column" spacing={6} justifyContent="center" maxW="600px" overflow={"hidden"} >
-          <chakra.h1 color={`#36454F`} fontSize="3xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
+          <chakra.h1 color={isLight ? `#36454F` : "white"} fontSize="3xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
             CONNECT WITH US <br />
             <chakra.span color={"cornflowerBlue"}>@ JDJ</chakra.span>
           </chakra.h1>

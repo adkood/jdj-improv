@@ -1,45 +1,90 @@
-import { chakra, Container, Box, Text, SimpleGrid, Flex, Link, useColorModeValue, HStack, Icon } from '@chakra-ui/react';
-import { MdOutlineSettingsApplications } from "react-icons/md";
-import { GrTechnology } from "react-icons/gr";
+'use client';
 
-const features = [
-    {
-        heading: 'TECHNOLOGIES USED',
-        content: 'Choose from Stripe, Paddle, Braintree, or PayPal to launch your product quickly.',
-        icon: GrTechnology,
-        href: '/technology'
-    },
-    {
-        heading: 'PRODUCT APPLICATIONS',
-        content: 'Webhooks are wired up to automatically email customers PDF receipts and invoices.',
-        icon: MdOutlineSettingsApplications,
-        href: '/applications'
-    }
-];
+import * as React from 'react';
+import {
+    chakra,
+    Container,
+    Stack,
+    HStack,
+    Text,
+    useColorModeValue,
+    Button,
+    Box,
+    Icon
+} from '@chakra-ui/react';
+import { GoChevronRight } from 'react-icons/go';
+import Link from 'next/link';
 
 const ProductBottom = () => {
     return (
-        <Container maxW="6xl" p={{ base: 5, md: 10 }}>
-            <chakra.h3 fontSize="3xl" color={"#36454F"} fontWeight="bold" mb={20} textAlign="center">
-                DISCOVER THE ESSENCE OF OUR PRODUCTS THROUGH A DUAL LENS.
-            </chakra.h3>
-            <HStack justifyContent={"center"}>
-                {features.map((feature, index) => (
-                    <Box key={index} bg="useColorModeValue('gray.100', 'gray.700')" p={6} m={5} rounded="lg" textAlign="center" pos="relative">
-                        <Flex w="max-content" color="white" bgGradient="linear(to-br, cornflowerBlue, lightGreen)" rounded="md" marginInline="auto" pos="absolute" left={0} right={0} top="-1.5rem" boxShadow="lg">
-                            <Icon as={feature.icon} fontSize={"4.5rem"} />
-                        </Flex>
-                        <chakra.h3 fontWeight="semibold" fontSize="2xl" mt={10} color={"#36454F"}>
-                            {feature.heading}
-                        </chakra.h3>
-                        <Link href={feature.href} mt={6} fontSize="lg" color="blue.400">
-                            VISIT
-                        </Link>
+        <Container maxW="6xl" px={{ base: 6, md: 3 }} py={14}>
+            <Stack direction={{ base: 'column', md: 'row' }} spacing={2} justifyContent="center">
+                <Stack
+                    direction="column"
+                    spacing={6}
+                    justifyContent="center"
+                    maxW="500px"
+                    mb={{ base: 3, md: 0 }}
+                >
+                    <Box>
+                        <chakra.h1 fontSize="3xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
+                            EXPLORE PRODUCTS THROUGH DUAL LENS <br />
+                            <chakra.span color="cornflowerBlue">TECHNOLOGY</chakra.span> <br /> AND <br />
+                            <chakra.span color="cornflowerBlue">APPLICATION</chakra.span>
+                        </chakra.h1>
                     </Box>
-                ))}
-            </HStack>
+                </Stack>
+                <Stack
+                    spacing={{ base: 5, sm: 2 }}
+                    direction={{ base: 'column', sm: 'row' }}
+                    alignItems="center"
+                >
+                    <Card
+                        heading="TECHNOLOGY"
+                        detail="Explore the technology involved to make our products better."
+                        href={"/technology"}
+                    />
+                    <Card heading="APPLICATION" detail="Know the wide range of applications of our project." 
+                    href={"/applications"}/>
+                </Stack>
+            </Stack>
         </Container>
     );
 };
 
+const Card = ({ heading, detail, href }) => {
+    return (
+        <Stack
+            href="#"
+            direction="column"
+            _hover={{
+                boxShadow: useColorModeValue(
+                    '0 4px 6px rgba(160, 174, 192, 0.6)',
+                    '0 4px 6px rgba(9, 17, 28, 0.9)'
+                )
+            }}
+            bg={useColorModeValue('gray.200', 'gray.700')}
+            p={5}
+            rounded="lg"
+            spacing={1}
+            maxW="450px"
+            h="max-content"
+        >
+            <Text fontSize="md" fontWeight="semibold">
+                {heading}
+            </Text>
+            <Text fontSize="md" textAlign="left" color="gray.600" lineHeight={1.3} noOfLines={2}>
+                {detail}
+            </Text>
+            <Link href={href}>
+            <HStack color="cornflowerBlue" alignItems="center">
+                <Text fontSize="sm" textAlign="left" fontWeight="600">
+                    EXPLORE
+                </Text>
+                <Icon as={GoChevronRight} w={4} h={4} />
+            </HStack>
+            </Link>
+        </Stack>
+    );
+};
 export default ProductBottom;

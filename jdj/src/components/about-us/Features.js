@@ -80,7 +80,6 @@ const Card = ({ title, href }) => {
                             _hover={{ color: 'cornflowerBlue' }}
                             fontSize="2xl"
                             lineHeight={1.2}
-                            fontWeight="bold"
                             w="100%"
                             color={"#36454F"}
                         >
