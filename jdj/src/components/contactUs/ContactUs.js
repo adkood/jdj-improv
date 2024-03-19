@@ -10,7 +10,12 @@ import {
   useColorModeValue,
   Box,
 } from '@chakra-ui/react';
-import LeafletMap from './LeafletMap';
+import dynamic from 'next/dynamic';
+
+const DynamicLeafletMap = dynamic(() => import('./LeafletMap'), {
+  ssr: false 
+});
+
 import { useSelector } from 'react-redux';
 import ContactInfo from './ContactInfo';
 
@@ -45,7 +50,7 @@ const ContactUs = () => {
             rounded="md"
             overflow="hidden"
           >
-            <LeafletMap center={[28.666306, 77.206997]} zoom={15} />
+            <DynamicLeafletMap center={[28.666306, 77.206997]} zoom={15} />
           </Box>
         </Box>
       </Stack>
