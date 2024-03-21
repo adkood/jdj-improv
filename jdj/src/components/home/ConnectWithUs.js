@@ -24,7 +24,7 @@ const ConnectWithUs = () => {
     <Container maxW="8xl" px={{ base: 6, md: 3 }} py={24}>
       <Stack direction={{ base: 'column', md: 'row' }} justifyContent="center">
         <Box mr={{ base: 0, md: 5 }} pos="relative">
-          {/* <DottedBox /> */}
+          <DottedBox />
           <Image
             boxShadow="lg"
             w="100%"
@@ -78,7 +78,7 @@ function DottedBox() {
     <Box position="absolute" left="-45px" top="-100px" height="full" maxW="700px" zIndex={-1}>
       <svg
         color={useColorModeValue('rgba(55,65,81, 0.3)', 'rgba(55,65,81, 0.9)')}
-        width="500"
+        width="90%"
         height="200"
         fill="none"
       >

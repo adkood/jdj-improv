@@ -99,7 +99,7 @@ function DottedBox() {
     <Box position="absolute" left="-45px" top="-30px" height="full" maxW="700px" zIndex={-1}>
       <svg
         color={useColorModeValue('rgba(55,65,81, 0.3)', 'rgba(55,65,81, 0.9)')}
-        width="500"
+        width="90%"
         height="500"
         fill="none"
       >
