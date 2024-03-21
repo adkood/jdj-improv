@@ -69,7 +69,7 @@ const AllComponents = () => {
                   position="relative"
                 >
                   <Image src={blog.image} onError={(e) => e.target.src = 'https://via.placeholder.com/300'} alt="Blog image" />
-                  <Box p={{ base: 4, lg: 6 }} bgColor={"whiteSmoke"}>
+                  <Box p={{ base: 4, lg: 6 }} bgColor={"whitesmoke"}>
                     <Box d="flex" alignItems="baseline">
                       <Box
                         fontWeight="semibold"

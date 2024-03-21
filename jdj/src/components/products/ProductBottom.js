@@ -29,9 +29,10 @@ const ProductBottom = () => {
                     justifyContent="center"
                     maxW="500px"
                     mb={{ base: 3, md: 0 }}
+                    style={{ textAlign: 'left' }} // Inline CSS for text alignment
                 >
                     <Box>
-                        <chakra.h1 color={isLight ? "#36454F" : "white"} fontSize="3xl" lineHeight={1.2} fontWeight="bold" textAlign="left">
+                        <chakra.h1 color={isLight ? "#36454F" : "white"} fontSize="2xl" lineHeight={1.3} fontWeight="bold" textAlign="left">
                             EXPLORE PRODUCTS THROUGH DUAL LENS <br />
                             <chakra.span color="cornflowerBlue">TECHNOLOGY</chakra.span> <br /> AND <br />
                             <chakra.span color="cornflowerBlue">APPLICATION</chakra.span>
@@ -59,20 +60,20 @@ const ProductBottom = () => {
 const Card = ({ heading, detail, href }) => {
     return (
         <Stack
-            href="#"
             direction="column"
+            bgColor={"white"}
             _hover={{
                 boxShadow: useColorModeValue(
                     '0 4px 6px rgba(160, 174, 192, 0.6)',
                     '0 4px 6px rgba(9, 17, 28, 0.9)'
                 )
             }}
-            bg={useColorModeValue('gray.200', 'gray.700')}
             p={5}
             rounded="lg"
             spacing={1}
             maxW="450px"
             h="max-content"
+            style={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }} // Inline CSS for box shadow
         >
             <Text fontSize="md" fontWeight="semibold">
                 {heading}
@@ -81,7 +82,7 @@ const Card = ({ heading, detail, href }) => {
                 {detail}
             </Text>
             <Link href={href}>
-                <HStack color="cornflowerBlue" alignItems="center">
+                <HStack color="cornflowerBlue" alignItems="center" style={{ cursor: 'pointer' }}> {/* Inline CSS for cursor */}
                     <Text fontSize="sm" textAlign="left" fontWeight="600">
                         EXPLORE
                     </Text>

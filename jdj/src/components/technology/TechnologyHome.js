@@ -1,14 +1,13 @@
 'use client'
 
-import { chakra, Link, Stack, Box, Button, useColorModeValue } from '@chakra-ui/react';
+import { chakra, Stack, Box, useColorModeValue, Divider } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
-import { GrTechnology } from "react-icons/gr";
 
 const TechnologyHome = () => {
   const isLight = useSelector((state) => state.colorCode.isLight);
   const bgColor = useColorModeValue('white', 'gray.800');
   const textColor = isLight ? '#36454F' : 'white';
-  const secondaryColor = isLight ? 'gray.500' : 'white';
+  const secondaryColor = isLight ? 'gray.600' : 'white';
   const boxShadow = isLight
     ? '0 4px 6px rgba(160, 174, 192, 0.6)'
     : '2px 4px 6px rgba(9, 17, 28, 0.9)';
@@ -27,16 +26,13 @@ const TechnologyHome = () => {
         >
           <Stack pos="relative" zIndex={1} direction="column" spacing={5} textAlign="left">
             <Stack direction="row" alignItems="center">
-              {/* <GrTechnology fontSize={"3rem"} color={"cornflowerBlue"} /> */}
-              <chakra.span fontSize="4xl" lineHeight={1.2} color={textColor} fontWeight="bold">
+              <chakra.span color={"cornflowerblue"} fontSize="3xl" lineHeight={1} fontWeight="bold">
                 TECHNOLOGY USED
               </chakra.span>
             </Stack>
-            <chakra.h1 color={secondaryColor} fontSize="2xl" maxW="4xl" lineHeight={1.2}>
-              Unleashing Unprecedented Excellence: Pioneering the Future of Copper Manufacturing with Innovative Solutions, Superior Quality, and Sustainable Practices.
-            </chakra.h1>
-            <chakra.h1 color={secondaryColor} fontSize="2xl" maxW="4xl" lineHeight={1.2}>
-              Technological Innovations Fueling Our Products
+            <Divider borderColor={secondaryColor} />
+            <chakra.h1 color={secondaryColor} fontSize="1.3rem" maxW="5xl" lineHeight={1.2}>
+              Unleashing Unprecedented Excellence: Pioneering the Future of Copper Manufacturing with Innovative Solutions, Superior Quality, and Sustainable Practices. Technological Innovations Fueling Our Products
             </chakra.h1>
           </Stack>
         </Box>
