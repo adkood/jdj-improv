@@ -12,7 +12,7 @@ export default function Home() {
 
   const isLight = useSelector((state) => state.colorCode.isLight);
 
-  return <Box bgColor={isLight ? "white" : "#464544"}>
+  return <Box bgColor={isLight ? "" : "#464544"}>
     <Navbar />
     <MyHome />
     <AboutUs />
