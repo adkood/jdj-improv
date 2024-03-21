@@ -3,14 +3,14 @@
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyle from '@/utils/Animate.module.css';
 import {
-  chakra, Container, Stack, Text, useColorModeValue, Image, Skeleton, SkeletonCircle, SkeletonText, Box, Link, Breadcrumb,
+  chakra, Container, Stack, Text, useColorModeValue, Image, Box, Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
 } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { tech_list } from '@/utils/Constant';
 import { ChevronRightIcon } from '@chakra-ui/icons';
+import Link from 'next/link';
 
 const TechnologyAll = () => {
 
@@ -19,9 +19,9 @@ const TechnologyAll = () => {
     <Box overflow={"hidden"}>
       <Container maxW="6xl" px={{ base: 6, md: 3 }} py={5}>
         <Breadcrumb spacing='8px' pb={5} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color={isLight ? "#36454F" : "whiteSmoke"} />}>
-          <BreadcrumbItem>
-            <BreadcrumbLink color={isLight ? "#36454F" : "whiteSmoke"} fontWeight={"bold"} href='#'>HOME</BreadcrumbLink>
-          </BreadcrumbItem>
+        <BreadcrumbItem>
+          <Link style={{ color: `${isLight ? "#36454F" : "whiteSmoke"}`, fontWeight: "bold" }} href='/'>HOME</Link>
+        </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
             <BreadcrumbLink fontWeight={"bold"} color={"cornflowerblue"}>TECHNOLOGY</BreadcrumbLink>
           </BreadcrumbItem>
@@ -65,7 +65,7 @@ export const TechnologySolo = ({ e, idx , isLight}) => {
                 {e.short}
               </Content>
             </Box>
-            <Link href={`/technology/${idx}`} fontSize="sm" color="blue.400">
+            <Link style={{ fontSize: "md", color: "cornflowerBlue"}} href={`/technology/${idx}`}>
               MORE →
             </Link>
           </Stack>

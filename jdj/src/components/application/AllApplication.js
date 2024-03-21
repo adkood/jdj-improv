@@ -14,12 +14,12 @@ import {
     Image, Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
-    BreadcrumbSeparator,
 } from '@chakra-ui/react';
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyle from '@/utils/Animate.module.css';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { useSelector } from 'react-redux';
+import Link from 'next/link';
 
 export const appli_list = [{
     id: '1', image: 'https://i.ibb.co/Jj59pLY/management-1031985.jpg', name: "Cables", short: 'Wire & Cable manufacturing with JDJ’s copper is highly beneficial due to its high purity and high electrical conductivity.', long: 'The electrical conductivity though decreases during the initial wire drawing process but this regains subsequently during annealing process due to high recrystallisation temperature. The electrical and mechanical properties are retained due to high plastic deformation during the fine wire drawing process. The excellent ductility of JDJ’s copper facilitates high speed wire drawing in multiwire drawing machine as well as stranding, bunching, transposing, shielding and tinning.', extra: ["Power Cables",
@@ -49,7 +49,7 @@ const AllApplications = () => {
         <Container maxWidth="7xl" p={{ base: 2, sm: 10 }} overflow={"hidden"}>
             <Breadcrumb spacing='8px' mb={3} pb={5} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color={isLight ? "#36454F" : "whiteSmoke"} />}>
                 <BreadcrumbItem>
-                    <BreadcrumbLink color={isLight ? "#36454F" : "whiteSmoke"} fontWeight={"bold"} href='/'>HOME</BreadcrumbLink>
+                    <Link style={{ color: `${isLight ? "#36454F" : "whiteSmoke"}`, fontWeight: "bold" }} href='/'>HOME</Link>
                 </BreadcrumbItem>
                 <BreadcrumbItem isCurrentPage>
                     <BreadcrumbLink fontWeight={"bold"} color={"cornflowerblue"}>APPLICATION</BreadcrumbLink>
@@ -63,7 +63,7 @@ const AllApplications = () => {
                             <>
                                 <EmptyCard />
                                 <LineWithDot />
-                                <Card {...milestone} />
+                                <Card isLight={isLight} {...milestone} />
                             </>
                         )}
 
@@ -71,14 +71,14 @@ const AllApplications = () => {
                         {isMobile && (
                             <>
                                 <LineWithDot />
-                                <Card {...milestone} />
+                                <Card isLight={isLight} {...milestone} />
                             </>
                         )}
 
                         {/* Desktop view(right card) */}
                         {isDesktop && milestone.id % 2 !== 0 && (
                             <>
-                                <Card {...milestone} />
+                                <Card isLight={isLight} {...milestone} />
                                 <LineWithDot />
                                 <EmptyCard />
                             </>
@@ -90,7 +90,7 @@ const AllApplications = () => {
     );
 };
 
-const Card = ({ id, name, short, image }) => {
+const Card = ({ id, name, short, image, isLight }) => {
     const isEvenId = id % 2 == 0;
     let borderWidthValue = isEvenId ? '15px 15px 15px 0' : '15px 0 15px 15px';
     let leftValue = isEvenId ? '-15px' : 'unset';
@@ -107,7 +107,6 @@ const Card = ({ id, name, short, image }) => {
         <HStack
             flex={1}
             p={{ base: 3, sm: 6 }}
-            bg={useColorModeValue('gray.100', 'gray.800')}
             spacing={5}
             rounded="lg"
             alignItems="center"
@@ -128,10 +127,10 @@ const Card = ({ id, name, short, image }) => {
             <Box>
                 <Image src={image} alt={name} w="80%" mb={3} rounded="md" />
                 <VStack spacing={2} mb={3} textAlign="left">
-                    <chakra.h1 color={"#36454F"} fontSize="3xl" lineHeight={1.2} fontWeight="bold" w="100%">
+                    <chakra.h1 color={isLight ? "#36454F" : "whiteSmoke"} fontSize="3xl" lineHeight={1.2} fontWeight="bold" w="100%">
                         {name}
                     </chakra.h1>
-                    <Text fontSize="2xl" fontWeight="500" color="gray.500">{short}</Text>
+                    <Text fontSize="xl" fontWeight="500" color={isLight ? "gray.600" : "whiteSmoke"}>{short}</Text>
                 </VStack>
             </Box>
         </HStack>

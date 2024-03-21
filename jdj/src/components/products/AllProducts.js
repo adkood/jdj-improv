@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {
-  Box, Badge, SimpleGrid, Container, Image, Link, Text, Breadcrumb,
+  Box, Badge, SimpleGrid, Container, Image, Text, Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbSeparator,
@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import GetAnimation from '@/utils/GetAnimation';
 import animateStyles from '@/utils/Animate.module.css';
 import { ChevronRightIcon } from '@chakra-ui/icons';
+import Link from 'next/link';
 
 
 const dataList = [
@@ -45,7 +46,7 @@ const AllComponents = () => {
     <Container maxWidth="1200px" mx="auto" my="auto" p={{ base: 5, md: 10 }} bgColor={`${isLight ? '' : '#464544'}`}>
       <Breadcrumb spacing='8px' pb={8} pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color={isLight ? "#36454F" : "whiteSmoke"} />}>
         <BreadcrumbItem>
-          <BreadcrumbLink color={isLight ? "#36454F" : "whiteSmoke"} fontWeight={"bold"} href='/'>HOME</BreadcrumbLink>
+          <Link style={{ color: `${isLight ? "#36454F" : "whiteSmoke"}`, fontWeight: "bold" }} href='/'>HOME</Link>
         </BreadcrumbItem>
         <BreadcrumbItem isCurrentPage>
           <BreadcrumbLink fontWeight={"bold"} color={"cornflowerblue"}>PRODUCTS</BreadcrumbLink>

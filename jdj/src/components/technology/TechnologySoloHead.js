@@ -22,6 +22,7 @@ import GetAnimation from '@/utils/GetAnimation';
 import animateStyle from '@/utils/Animate.module.css';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { useSelector } from 'react-redux';
+import Link from 'next/link';
 
 const TechnologySoloHead = ({ techId }) => {
 
@@ -31,12 +32,12 @@ const TechnologySoloHead = ({ techId }) => {
     <>
       <Container maxWidth={"1400px"} p={{ base: 5, md: 10 }}>
         <Breadcrumb spacing='8px' pl={1} separator={<ChevronRightIcon fontSize={"1.5rem"} color={isLight ? '#36454F' : "white"} />}>
-          <BreadcrumbItem>
-            <BreadcrumbLink color={isLight ? '#36454F' : "white"} fontWeight={"bold"} href='/'>HOME</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbLink color={isLight ? '#36454F' : "white"} fontWeight={"bold"} href='/technology'>TECHNOLOGY</BreadcrumbLink>
-          </BreadcrumbItem>
+        <BreadcrumbItem>
+          <Link style={{ color: `${isLight ? "#36454F" : "whiteSmoke"}`, fontWeight: "bold" }} href='/'>HOME</Link>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <Link style={{ color: `${isLight ? "#36454F" : "whiteSmoke"}`, fontWeight: "bold" }} href='/technology'>TECHNOLOGY</Link>
+        </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
             <BreadcrumbLink fontWeight={"bold"} color={"cornflowerblue"}>{tech_list[techId].name}</BreadcrumbLink>
           </BreadcrumbItem>
