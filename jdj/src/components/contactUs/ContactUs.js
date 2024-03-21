@@ -50,7 +50,7 @@ const ContactUs = () => {
             rounded="md"
             overflow="hidden"
           >
-            <DynamicLeafletMap center={[28.666306, 77.206997]} zoom={15} />
+            <DynamicLeafletMap center={[28.6633580, 77.2020640]} zoom={15} />
           </Box>
         </Box>
       </Stack>
